@@ -1,0 +1,58 @@
+//_mixins.scss
+
+@mixin bgcover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin transition {
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.15);
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.15);
+}
+
+@mixin border-radius($i) {
+  -webkit-border-radius: ($i);
+  border-radius: ($i);
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+@mixin regular {
+    font-family:'Proxima Nova W08 Reg';
+    font-weight: normal;
+}
+
+@mixin semibold {
+    font-family:'Proxima N W01 Smbd';
+    font-weight: normal;
+}
+
+@mixin bold {
+    font-family:'Proxima N W01 Bold';
+    font-weight: normal;
+}
+
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

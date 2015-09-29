@@ -1,0 +1,336 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+  width: 94%; }
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -0.5%;
+  margin-left: -0.5%; }
+  .row.alt {
+    margin-left: 0;
+    margin-right: 0; }
+  .row.reverse {
+    flex-direction: row-reverse; }
+  .row.magic-center {
+    align-items: center; }
+
+.col.reverse {
+  flex-direction: column-reverse; }
+
+.padding-left {
+  padding-left: 20px; }
+
+.padding-right {
+  padding-right: 20px; }
+
+.apush-0 {
+  padding-top: 0%; }
+
+.apush-1 {
+  padding-top: 0.5%; }
+
+.apush-2 {
+  padding-top: 1%; }
+
+.apush-3 {
+  padding-top: 1.5%; }
+
+.apush-4 {
+  padding-top: 2%; }
+
+.apush-5 {
+  padding-top: 2.5%; }
+
+.apush-6 {
+  padding-top: 3%; }
+
+.apush-7 {
+  padding-top: 3.5%; }
+
+.apush-8 {
+  padding-top: 4%; }
+
+.apush-9 {
+  padding-top: 4.5%; }
+
+.apush-10 {
+  padding-top: 5%; }
+
+.apush-11 {
+  padding-top: 5.5%; }
+
+.apush-12 {
+  padding-top: 6%; }
+
+.bpush-0 {
+  padding-bottom: 0%; }
+
+.bpush-1 {
+  padding-bottom: 0.5%; }
+
+.bpush-2 {
+  padding-bottom: 1%; }
+
+.bpush-3 {
+  padding-bottom: 1.5%; }
+
+.bpush-4 {
+  padding-bottom: 2%; }
+
+.bpush-5 {
+  padding-bottom: 2.5%; }
+
+.bpush-6 {
+  padding-bottom: 3%; }
+
+.bpush-7 {
+  padding-bottom: 3.5%; }
+
+.bpush-8 {
+  padding-bottom: 4%; }
+
+.bpush-9 {
+  padding-bottom: 4.5%; }
+
+.bpush-10 {
+  padding-bottom: 5%; }
+
+.bpush-11 {
+  padding-bottom: 5.5%; }
+
+.bpush-12 {
+  padding-bottom: 6%; }
+
+.col-all, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11, .col-offset-12 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 0.5%;
+  padding-left: 0.5%; }
+
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%; }
+
+.col-1 {
+  flex-basis: 8.333%;
+  max-width: 8.333%; }
+
+.col-2 {
+  flex-basis: 16.667%;
+  max-width: 16.667%; }
+
+.col-3 {
+  flex-basis: 25%;
+  max-width: 25%; }
+
+.col-4 {
+  flex-basis: 33.333%;
+  max-width: 33.333%; }
+
+.col-5 {
+  flex-basis: 41.667%;
+  max-width: 41.667%; }
+
+.col-6 {
+  flex-basis: 50%;
+  max-width: 50%; }
+
+.col-7 {
+  flex-basis: 58.333%;
+  max-width: 58.333%; }
+
+.col-8 {
+  flex-basis: 66.667%;
+  max-width: 66.667%; }
+
+.col-9 {
+  flex-basis: 75%;
+  max-width: 75%; }
+
+.col-10 {
+  flex-basis: 83.333%;
+  max-width: 83.333%; }
+
+.col-11 {
+  flex-basis: 91.667%;
+  max-width: 91.667%; }
+
+.col-12 {
+  flex-basis: 100%;
+  max-width: 100%; }
+
+.col-offset-1 {
+  margin-left: 8.333%; }
+
+.col-offset-2 {
+  margin-left: 16.667%; }
+
+.col-offset-3 {
+  margin-left: 25%; }
+
+.col-offset-4 {
+  margin-left: 33.333%; }
+
+.col-offset-5 {
+  margin-left: 41.667%; }
+
+.col-offset-6 {
+  margin-left: 50%; }
+
+.col-offset-7 {
+  margin-left: 58.333%; }
+
+.col-offset-8 {
+  margin-left: 66.667%; }
+
+.col-offset-9 {
+  margin-left: 75%; }
+
+.col-offset-10 {
+  margin-left: 83.333%; }
+
+.col-offset-11 {
+  margin-left: 91.667%; }
+
+.start {
+  justify-content: flex-start;
+  text-align: start; }
+
+.center {
+  justify-content: center;
+  text-align: center; }
+
+.end {
+  justify-content: flex-end;
+  text-align: end; }
+
+.top {
+  align-items: flex-start; }
+
+.middle {
+  align-items: center; }
+
+.bottom {
+  align-items: flex-end; }
+
+.around {
+  justify-content: space-around; }
+
+.between {
+  justify-content: space-between; }
+
+.first {
+  order: -1; }
+
+.last {
+  order: 1; }
+
+.alpha {
+  padding-left: 0; }
+
+.omega {
+  padding-right: 0; }
+
+body {
+  font-size: 24px;
+  font-weight: normal;
+  color: #4f5d62;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Proxima Nova W08 Reg';
+  font-weight: normal; }
+
+h2 {
+  font-size: 30px;
+  font-weight: normal;
+  font-family: 'Proxima Nova W08 Reg';
+  font-weight: normal; }
+
+nav {
+  text-transform: uppercase;
+  font-size: 16px; }
+
+ul li, ol li {
+  font-weight: normal;
+  display: inline;
+  font-size: 16px;
+  margin-right: 60px; }
+  ul li:last-child, ol li:last-child {
+    margin-right: 0; }
+  ul li a, ol li a {
+    color: #4f5d62; }
+
+a {
+  text-decoration: none; }
+
+section#start {
+  background: #fff url("../../assets/gradient.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+section#steps {
+  background-color: #4f5d62;
+  color: #abb3c3; }
+  section#steps .instructions h3 {
+    font-family: 'Proxima N W01 Bold';
+    font-weight: normal; }
+  section#steps form input {
+    border: 0 none;
+    padding: 15px;
+    font-size: 16px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px; }
+  section#steps form button {
+    border: 0 none;
+    background-color: #e51f62;
+    color: #fff;
+    padding: 15px 20px 16px;
+    font-size: 16px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px; }

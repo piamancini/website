@@ -1,0 +1,40 @@
+//_typeworks.scss
+
+body {
+    font-size: 24px;
+    font-weight: normal;
+    color: $base;
+    @include font-smoothing;
+    @include regular;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: normal;
+    @include regular;
+}
+
+nav {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+ul, ol {
+    li {
+        font-weight: normal;
+        display: inline;
+        font-size: 16px;
+        //bold
+        margin-right: 60px;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            color: $base;
+        }
+    }
+}
+
+a {
+    text-decoration: none
+}
