@@ -277,60 +277,122 @@ table {
   padding-right: 0; }
 
 body {
-  font-size: 24px;
+  font-size: 2vh;
   font-weight: normal;
-  color: #4f5d62;
+  color: #464E51;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Proxima Nova W08 Reg';
   font-weight: normal; }
 
 h2 {
-  font-size: 30px;
+  font-size: 2vh;
   font-weight: normal;
   font-family: 'Proxima Nova W08 Reg';
-  font-weight: normal; }
+  font-weight: normal;
+  line-height: 2.6vh; }
 
 nav {
   text-transform: uppercase;
-  font-size: 16px; }
+  font-size: 1.2vh; }
+
+p {
+  line-height: 2.3vh; }
 
 ul li, ol li {
   font-weight: normal;
   display: inline;
-  font-size: 16px;
-  margin-right: 60px; }
+  font-size: 1.2vh;
+  margin-right: 6.0vh; }
   ul li:last-child, ol li:last-child {
     margin-right: 0; }
   ul li a, ol li a {
-    color: #4f5d62; }
+    color: #464E51; }
 
 a {
   text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+form input, form button {
+  font-size: 1.6vh;
+  @font-weight : normal;
+  font-family: 'Proxima Nova W08 Reg';
+  font-weight: normal; }
+
+html, body {
+  height: 100vh; }
+
+header {
+  height: 5vh;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 1vh 0; }
 
 section#start {
   background: #fff url("../../assets/gradient.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  height: 55vh;
+  overflow: hidden; }
+  section#start .preview {
+    display: table-cell;
+    vertical-align: bottom;
+    width: 100%; }
 section#steps {
-  background-color: #4f5d62;
-  color: #abb3c3; }
+  background-color: #464E51;
+  color: #abb3c3;
+  height: 40vh; }
   section#steps .instructions h3 {
     font-family: 'Proxima N W01 Bold';
     font-weight: normal; }
+  section#steps .instructions .item:first-child span {
+    color: #2fc4db; }
+  section#steps .instructions .item:nth-child(2) span {
+    color: #51f491; }
+  section#steps .instructions .item:last-child span {
+    color: #e0ff4f; }
   section#steps form input {
     border: 0 none;
-    padding: 15px;
-    font-size: 16px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px; }
+    padding: 1.1vh 2vh;
+    font-size: 1.8vh;
+    -webkit-border-radius: 0.2vh;
+    border-radius: 0.2vh;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 90%; }
+    section#steps form input:hover, section#steps form input:active {
+      background-color: rgba(255, 255, 255, 0.8); }
   section#steps form button {
     border: 0 none;
     background-color: #e51f62;
     color: #fff;
-    padding: 15px 20px 16px;
-    font-size: 16px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px; }
+    padding: 1vh 2vh;
+    font-size: 1.8vh;
+    -webkit-border-radius: 0.2vh;
+    border-radius: 0.2vh;
+    cursor: pointer;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    font-family: 'Proxima N W01 Bold';
+    font-weight: normal;
+    width: 95%; }
+    section#steps form button:hover {
+      background-color: #c41752; }
+
+footer {
+  background-color: #3e4448;
+  padding: 20px 0;
+  color: #abb3c3;
+  height: 5vh; }

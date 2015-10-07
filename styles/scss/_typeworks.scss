@@ -1,7 +1,7 @@
 //_typeworks.scss
 
 body {
-    font-size: 24px;
+    font-size: 2vh;
     font-weight: normal;
     color: $base;
     @include font-smoothing;
@@ -9,23 +9,28 @@ body {
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 2vh;
     font-weight: normal;
     @include regular;
+    line-height: 2.6vh;
 }
 
 nav {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1.2vh;
+}
+
+p {
+    line-height: 2.3vh;
 }
 
 ul, ol {
     li {
         font-weight: normal;
         display: inline;
-        font-size: 16px;
+        font-size: 1.2vh;
         //bold
-        margin-right: 60px;
+        margin-right: 6.0vh;
         &:last-child {
             margin-right: 0;
         }
@@ -36,5 +41,16 @@ ul, ol {
 }
 
 a {
-    text-decoration: none
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+form {
+    input, button {
+        font-size: 1.6vh;
+        @font-weight: normal;
+        @include regular;
+    }
 }

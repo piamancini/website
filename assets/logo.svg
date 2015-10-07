@@ -3,8 +3,8 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 612 109.9" style="enable-background:new 0 0 612 109.9;" xml:space="preserve">
 <style type="text/css">
-        .st0{fill:#505E63;}
-        .st1{fill:#9DB2B7;}
+        .st0{fill:#73797d;}
+        .st1{fill:#73797d;}
 </style>
 <g>
         <g>
@@ -64,7 +64,7 @@
                                 c-0.9,14.2,10.3,25.9,24.3,25.9c4.8,0,9.2-1.4,13-3.8c0.8-0.5,1-1.7,0.3-2.4l-4.1-4.1c-0.5-0.5-1.2-0.6-1.8-0.3
                                 C101.6,68.1,99.1,68.7,96.5,68.7z"/>
                 </defs>
-                <use xlink:href="#SVGID_1_"  style="overflow:visible;fill:#505E63;"/>
+                <use xlink:href="#SVGID_1_"  style="overflow:visible;fill:#73797d;"/>
                 <clipPath id="SVGID_2_">
                         <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
                 </clipPath>
