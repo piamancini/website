@@ -1,0 +1,30 @@
+{
+  "name": "oc-website",
+  "version": "1.0.0",
+  "description": "Website for OpenCollective",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "body-parser": "^1.14.1",
+    "email-templates": "^2.0.1",
+    "nodemailer": "^1.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenCollective/website.git"
+  },
+  "keywords": [
+    "open",
+    "fintech",
+    "budget"
+  ],
+  "author": "OpenCollective, Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenCollective/website/issues"
+  },
+  "homepage": "https://github.com/OpenCollective/website#readme"
+}

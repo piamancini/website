@@ -1,36 +1,31 @@
 // _grid.scss
 
 $columns: 12;
-$gutter-width: 1%;
-$outer-margin: 1%;
+$gutter-width: 5px;
+$outer-margin: 5px;
 $gutter-compensation: ( $gutter-width / 2 * -1 );
 $half-gutter-width: ( $gutter-width / 2);
 
-.container{
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 0;
-    padding-left: 0;
+container, .container {
+    padding-right: $outer-margin;
+    padding-left: $outer-margin;
+    display: block;
+    margin: 0 auto;
     width: 94%;
 }
 
-.row {
+.row, row {
     box-sizing: border-box;
+    height: 100%;
+    @include border-box;
     display: flex;
     flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
     margin-right: $gutter-compensation;
     margin-left: $gutter-compensation;
-    &.alt {
-        margin-left: 0;
-        margin-right: 0;
-    }
     &.reverse {
         flex-direction: row-reverse;
-    }
-    &.magic-center {
-        align-items: center;
     }
 }
 
@@ -38,29 +33,23 @@ $half-gutter-width: ( $gutter-width / 2);
     flex-direction: column-reverse;
 }
 
-.padding-left {
-    padding-left: 20px;
-}
-
-.padding-right {
-    padding-right: 20px;
-}
 
 @mixin apush {
     @for $i from 0 through $columns {
-        .apush-#{$i} { padding-top: ($half-gutter-width * $i) }
+        .apush-#{$i} { padding-top: ($gutter-width * $i) }
     }
 }
 
 @mixin bpush {
     @for $i from 0 through $columns {
-        .bpush-#{$i} { padding-bottom: ($half-gutter-width * $i) }
+        .bpush-#{$i} { padding-bottom: ($gutter-width * $i) }
     }
 }
+
 @include apush;
 @include bpush;
 
-.col-all, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11, .col-offset-12 {
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11, .col-offset-12 {
     box-sizing: border-box;
     flex: 0 0 auto;
     padding-right: $half-gutter-width;
@@ -169,6 +158,9 @@ $half-gutter-width: ( $gutter-width / 2);
 }
 .middle {
     align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
 }
 .bottom {
     align-items: flex-end;
@@ -190,4 +182,24 @@ $half-gutter-width: ( $gutter-width / 2);
 }
 .omega {
     padding-right: 0;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    row, .row {
+        width: 98%;
+        max-width: 98%;
+        margin: 0 auto
+    }
+
+    .col-offset-1 ,.col-offset-2 ,.col-offset-3 ,.col-offset-4 ,.col-offset-5 ,.col-offset-6 ,.col-offset-7 ,.col-offset-8 ,.col-offset-9 ,.col-offset-10 ,.col-offset-11 {
+        margin-left: 0;
+    }
 }

@@ -1,34 +1,33 @@
 //_layout.scss
 html, body {
-    height: 100vh;
+    height: 100%;
 }
 
 header {
-    height: 5vh;
+    height: 5%;
     position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
-    padding: 1vh 0;
+    padding: 10px 0;
 }
 
 section {
     &#start {
         background: $light url('../../assets/gradient.png') no-repeat center center fixed;
         @include bgcover;
-        height: 55vh;
         overflow: hidden;
+        padding-top: 5%;
         .preview {
-            display: table-cell;
-            vertical-align: bottom;
             width: 100%;
+            margin: 0 auto;
+            display: block;
         }
 
     }
     &#steps {
         background-color: $base;
         color: $light-gray;
-        height: 40vh;
         .instructions {
             h3 {
                 @include bold;
@@ -54,12 +53,11 @@ section {
         form {
             input {
                 border: 0 none;
-                padding: 1.1vh 2vh;
-                font-size: 1.8vh;
-                @include border-radius(.2vh);
+                padding: 11px 20px 12px;
+                font-size: 18px;
+                @include border-radius(2px);
                 @include transition;
                 background-color: transparentize($light, .5);
-                width: 90%;
 
                 &:hover, &:active {
                     background-color: transparentize($light, .2)
@@ -69,13 +67,12 @@ section {
                 border: 0 none;
                 background-color: $pinkish-red;
                 color: $light;
-                padding: 1vh 2vh;
-                font-size: 1.8vh;
-                @include border-radius(.2vh);
+                padding: 10px 20px;
+                font-size: 18px;
+                @include border-radius(2px);
                 cursor: pointer;
                 @include transition;
                 @include bold;
-                width: 95%;
                 &:hover {
                     background-color: darken($pinkish-red, 8%)
                 }
@@ -88,5 +85,5 @@ footer {
     background-color: $dark-gray;
     padding: 20px 0;
     color: $light-gray;
-    height: 5vh;
+    height: 50px;
 }

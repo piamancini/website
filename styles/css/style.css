@@ -35,121 +35,117 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 0;
-  padding-left: 0;
+container, .container {
+  padding-right: 5px;
+  padding-left: 5px;
+  display: block;
+  margin: 0 auto;
   width: 94%; }
 
-.row {
+.row, row {
   box-sizing: border-box;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: -0.5%;
-  margin-left: -0.5%; }
-  .row.alt {
-    margin-left: 0;
-    margin-right: 0; }
-  .row.reverse {
+  margin-right: -2.5px;
+  margin-left: -2.5px; }
+  .row.reverse, row.reverse {
     flex-direction: row-reverse; }
-  .row.magic-center {
-    align-items: center; }
 
 .col.reverse {
   flex-direction: column-reverse; }
 
-.padding-left {
-  padding-left: 20px; }
-
-.padding-right {
-  padding-right: 20px; }
-
 .apush-0 {
-  padding-top: 0%; }
+  padding-top: 0px; }
 
 .apush-1 {
-  padding-top: 0.5%; }
+  padding-top: 5px; }
 
 .apush-2 {
-  padding-top: 1%; }
+  padding-top: 10px; }
 
 .apush-3 {
-  padding-top: 1.5%; }
+  padding-top: 15px; }
 
 .apush-4 {
-  padding-top: 2%; }
+  padding-top: 20px; }
 
 .apush-5 {
-  padding-top: 2.5%; }
+  padding-top: 25px; }
 
 .apush-6 {
-  padding-top: 3%; }
+  padding-top: 30px; }
 
 .apush-7 {
-  padding-top: 3.5%; }
+  padding-top: 35px; }
 
 .apush-8 {
-  padding-top: 4%; }
+  padding-top: 40px; }
 
 .apush-9 {
-  padding-top: 4.5%; }
+  padding-top: 45px; }
 
 .apush-10 {
-  padding-top: 5%; }
+  padding-top: 50px; }
 
 .apush-11 {
-  padding-top: 5.5%; }
+  padding-top: 55px; }
 
 .apush-12 {
-  padding-top: 6%; }
+  padding-top: 60px; }
 
 .bpush-0 {
-  padding-bottom: 0%; }
+  padding-bottom: 0px; }
 
 .bpush-1 {
-  padding-bottom: 0.5%; }
+  padding-bottom: 5px; }
 
 .bpush-2 {
-  padding-bottom: 1%; }
+  padding-bottom: 10px; }
 
 .bpush-3 {
-  padding-bottom: 1.5%; }
+  padding-bottom: 15px; }
 
 .bpush-4 {
-  padding-bottom: 2%; }
+  padding-bottom: 20px; }
 
 .bpush-5 {
-  padding-bottom: 2.5%; }
+  padding-bottom: 25px; }
 
 .bpush-6 {
-  padding-bottom: 3%; }
+  padding-bottom: 30px; }
 
 .bpush-7 {
-  padding-bottom: 3.5%; }
+  padding-bottom: 35px; }
 
 .bpush-8 {
-  padding-bottom: 4%; }
+  padding-bottom: 40px; }
 
 .bpush-9 {
-  padding-bottom: 4.5%; }
+  padding-bottom: 45px; }
 
 .bpush-10 {
-  padding-bottom: 5%; }
+  padding-bottom: 50px; }
 
 .bpush-11 {
-  padding-bottom: 5.5%; }
+  padding-bottom: 55px; }
 
 .bpush-12 {
-  padding-bottom: 6%; }
+  padding-bottom: 60px; }
 
-.col-all, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11, .col-offset-12 {
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11, .col-offset-12 {
   box-sizing: border-box;
   flex: 0 0 auto;
-  padding-right: 0.5%;
-  padding-left: 0.5%; }
+  padding-right: 2.5px;
+  padding-left: 2.5px; }
 
 .col {
   flex-grow: 1;
@@ -253,7 +249,10 @@ table {
   align-items: flex-start; }
 
 .middle {
-  align-items: center; }
+  align-items: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center; }
 
 .bottom {
   align-items: flex-end; }
@@ -276,8 +275,22 @@ table {
 .omega {
   padding-right: 0; }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    min-width: 100%; }
+
+  row, .row {
+    width: 98%;
+    max-width: 98%;
+    margin: 0 auto; }
+
+  .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11 {
+    margin-left: 0; } }
 body {
-  font-size: 2vh;
+  font-size: 20px;
   font-weight: normal;
   color: #464E51;
   -webkit-font-smoothing: antialiased;
@@ -286,25 +299,25 @@ body {
   font-weight: normal; }
 
 h2 {
-  font-size: 2vh;
+  font-size: 20px;
   font-weight: normal;
   font-family: 'Proxima Nova W08 Reg';
   font-weight: normal;
-  line-height: 2.6vh; }
+  line-height: 26px; }
 
 nav {
   text-transform: uppercase;
-  font-size: 1.2vh; }
+  font-size: 12px; }
 
 p {
-  line-height: 2.3vh; }
+  line-height: 26px; }
 
 ul li, ol li {
   font-weight: normal;
   display: inline;
-  font-size: 1.2vh;
-  margin-right: 6.0vh; }
-  ul li:last-child, ol li:last-child {
+  font-size: 12px;
+  margin-right: 60px; }
+  ul li:not(:first-child), ol li:not(:first-child) {
     margin-right: 0; }
   ul li a, ol li a {
     color: #464E51; }
@@ -315,21 +328,21 @@ a {
     text-decoration: underline; }
 
 form input, form button {
-  font-size: 1.6vh;
+  font-size: 16px;
   @font-weight : normal;
   font-family: 'Proxima Nova W08 Reg';
   font-weight: normal; }
 
 html, body {
-  height: 100vh; }
+  height: 100%; }
 
 header {
-  height: 5vh;
+  height: 5%;
   position: fixed;
   top: 0;
   z-index: 100;
   width: 100%;
-  padding: 1vh 0; }
+  padding: 10px 0; }
 
 section#start {
   background: #fff url("../../assets/gradient.png") no-repeat center center fixed;
@@ -337,16 +350,15 @@ section#start {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 55vh;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 5%; }
   section#start .preview {
-    display: table-cell;
-    vertical-align: bottom;
-    width: 100%; }
+    width: 100%;
+    margin: 0 auto;
+    display: block; }
 section#steps {
   background-color: #464E51;
-  color: #abb3c3;
-  height: 40vh; }
+  color: #abb3c3; }
   section#steps .instructions h3 {
     font-family: 'Proxima N W01 Bold';
     font-weight: normal; }
@@ -358,27 +370,26 @@ section#steps {
     color: #e0ff4f; }
   section#steps form input {
     border: 0 none;
-    padding: 1.1vh 2vh;
-    font-size: 1.8vh;
-    -webkit-border-radius: 0.2vh;
-    border-radius: 0.2vh;
+    padding: 11px 20px 12px;
+    font-size: 18px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
     -webkit-transition: all 200ms ease-in;
     -moz-transition: all 200ms ease-in;
     -ms-transition: all 200ms ease-in;
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 90%; }
+    background-color: rgba(255, 255, 255, 0.5); }
     section#steps form input:hover, section#steps form input:active {
       background-color: rgba(255, 255, 255, 0.8); }
   section#steps form button {
     border: 0 none;
     background-color: #e51f62;
     color: #fff;
-    padding: 1vh 2vh;
-    font-size: 1.8vh;
-    -webkit-border-radius: 0.2vh;
-    border-radius: 0.2vh;
+    padding: 10px 20px;
+    font-size: 18px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
     cursor: pointer;
     -webkit-transition: all 200ms ease-in;
     -moz-transition: all 200ms ease-in;
@@ -386,8 +397,7 @@ section#steps {
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
     font-family: 'Proxima N W01 Bold';
-    font-weight: normal;
-    width: 95%; }
+    font-weight: normal; }
     section#steps form button:hover {
       background-color: #c41752; }
 
@@ -395,4 +405,4 @@ footer {
   background-color: #3e4448;
   padding: 20px 0;
   color: #abb3c3;
-  height: 5vh; }
+  height: 50px; }
