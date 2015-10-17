@@ -62,12 +62,12 @@
             <div class="row center apush-2">
                 <div class="col-6">
                     <p>Interested? Request an invite!</p>
-                        <form class="row apush-2 bpush-5 center between" method="POST">
+                        <form id="firstForm" class="row apush-2 bpush-5 center between" method="POST">
                             <div class="col-8">
-                                <input name="email" type="email" placeholder="Email Address" required/>
+                                <input id="candidate" name="email" type="email" placeholder="Email Address" required/>
                             </div>
                             <div class="col-4">
-                                <input type="submit" value="Sign up for free">
+                                <input id="email" type="submit" value="Sign up for free">
                             </div>
                         </form>
                 </div>
@@ -85,16 +85,19 @@
         </div>
     </footer>
 
-    <section>
+    <section id="followup" class="hidden">
         <div class="container">
             <div class="row center">
                 <div class="col-8">
-                    <form method="POST">
+                    <form id="followform" method="POST">
+                        <input id="follows" name="candidate" value="" />
                         <h1>Tell us a bit more…</h1>
+
                         <label>Why are you interested and what project would you use it for?</label>
-                        <textarea placeholder="This will put you higher up in the list!"></textarea>
+                        <textarea name="textarea" placeholder="This will put you higher up in the list!"></textarea>
+
                         <label>Where are you based?</label>
-                        <select>
+                        <select name="country">
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
                             <option value="AL">Albania</option>
@@ -345,6 +348,7 @@
                             <option value="ZM">Zambia</option>
                             <option value="ZW">Zimbabwe</option>
                         </select>
+
                         <label>Do you have a bank account for this project?</label>
                         <div class="onoffswitch">
                             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
@@ -355,18 +359,41 @@
                         </div>
 
                         <label>How much revenue do you expect per month?</label>
-                        <select>
+                        <select name="select">
                             <option>$0 - $1,000</option>
                             <option>$1,001 - $5,000</option>
                             <option>$5,001 - $20,000</option>
                             <option>$20,000 +</option>
                         </select>
 
-                        <input type="submit" value="Send!"/>
+                        <input id="sendInfo" type="submit" value="Send!"/>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+        $('#firstForm').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url:'/',
+                data:$('#firstForm').serialize(),
+                type:'post',
+                success:function(){
+                    $('#followup').removeClass('hidden');
+                    $('html,body').animate({
+                        scrollTop: $("#followup").offset().top
+                    },'slow');
+                }
+            });
+            var candidate = $('#candidate').val();
+            $('#follows').val(candidate)
+        });
+    });
+    </script>
 </body>
 </html>

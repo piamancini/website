@@ -530,6 +530,10 @@ footer {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; }
 
+.hidden {
+  display: none;
+  visibility: hidden; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   form input {
     width: 100%; } }

@@ -11,8 +11,7 @@ app.get('/', function (req, res) {
 
 app.use(bodyParser.urlencoded({ extended: true })); // Parses application/x-www-form-urlencoded
 
-app.post('/', function (req, res){
-    var transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
             user: 'maru@bxe.me',
@@ -20,6 +19,7 @@ app.post('/', function (req, res){
         }
     });
 
+app.post('/', function (req, res){
     console.log(req.body)
 
     var email = req.body.email || 'hola@maruma.ru'
@@ -34,7 +34,7 @@ app.post('/', function (req, res){
         from: 'maru@bxe.me', // sender address
         to: 'hola@maruma.ru', // list of receivers
         subject: 'Mailing List Candidate', // Subject line
-        text: req.body.email+' Has requested to join the list on OpenCollective', // plaintext body
+        text: req.body.email + ' Puchi', // plaintext body
         html: '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective' // html body
     };
 
@@ -49,6 +49,31 @@ app.post('/', function (req, res){
         }
     });
 
+})
+
+
+app.post('/followup', function (req, res){
+    console.log(req.body)
+
+    // setup e-mail data with unicode symbols
+      var mailOptions = {
+        from: 'maru@bxe.me', // sender address
+        to: 'hola@maruma.ru', // list of receivers
+        subject: 'Follow up', // Subject line
+        text: req.body, // plaintext body
+        html: req.body // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            res.status(400, 'Not happening.')
+            res.send('Nope. This is a failure.')
+        } else {
+            res.status(200, 'Yay! Here goes!')
+            res.redirect('/')
+        }
+    });
 })
 
 app.use('/styles', express.static(__dirname + '/styles'));

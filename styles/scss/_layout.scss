@@ -224,6 +224,11 @@ footer {
   }
 }
 
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     form {
         input {
