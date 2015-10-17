@@ -379,7 +379,8 @@ section#steps {
     -ms-transition: all 200ms ease-in;
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
-    background-color: rgba(255, 255, 255, 0.5); }
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 85%; }
     section#steps form input:hover, section#steps form input:active {
       background-color: rgba(255, 255, 255, 0.8); }
   section#steps form button {
@@ -397,7 +398,8 @@ section#steps {
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
     font-family: 'Proxima N W01 Bold';
-    font-weight: normal; }
+    font-weight: normal;
+    width: 100%; }
     section#steps form button:hover {
       background-color: #c41752; }
 
@@ -406,3 +408,7 @@ footer {
   padding: 20px 0;
   color: #abb3c3;
   height: 50px; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  form input {
+    width: 100%; } }

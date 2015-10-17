@@ -58,6 +58,7 @@ section {
                 @include border-radius(2px);
                 @include transition;
                 background-color: transparentize($light, .5);
+                width: 85%;
 
                 &:hover, &:active {
                     background-color: transparentize($light, .2)
@@ -73,6 +74,7 @@ section {
                 cursor: pointer;
                 @include transition;
                 @include bold;
+                width: 100%;
                 &:hover {
                     background-color: darken($pinkish-red, 8%)
                 }
@@ -86,4 +88,12 @@ footer {
     padding: 20px 0;
     color: $light-gray;
     height: 50px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    form {
+        input {
+            width: 100%;
+        }
+    }
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/css/style.css">
     <script type="text/javascript" src="http://fast.fonts.net/jsapi/b4704ba9-716c-4487-b5a4-2f3c5fb7f567.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -62,12 +63,12 @@
                     <p>Interested? Request an invite!</p>
                         <form class="row apush-2 bpush-5 center between">
                             <div class="col-8">
-                                <input type="email" placeholder="Email Address"/>
+                                <input id="to" type="email" placeholder="Email Address"/>
                             </div>
                             <div class="col-4">
-                                <button>Sign up for free</button>
+                                <button id="send">Sign up for free</button>
                             </div>
-                            
+                            <div id="message">PUCHI</div>
                         </form>
                 </div>
             </div>
@@ -83,6 +84,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+            var from,to,subject,text;
+
+            $("#send").click(function(event){
+                event.preventDefault();
+                to=$("#to").val();
+                $.get("http://localhost:3000/send",{to:to},function(data){
+                    if(data == "sent")
+                    {
+                        $("#message").empty().html(" Email is been sent at "+to+" . Please check inbox! ");
+                    }
+                });
+            });
+        });
+    </script>
     
 </body>
 </html>

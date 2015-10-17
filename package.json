@@ -9,7 +9,6 @@
     "email-templates": "^2.0.1",
     "express": "^4.13.3",
     "google-spreadsheet": "^1.0.1",
-    "node-mailer": "^0.1.1",
     "nodemailer": "^1.8.0"
   },
   "scripts": {
