@@ -298,6 +298,12 @@ body {
   font-family: 'Proxima Nova W08 Reg';
   font-weight: normal; }
 
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  font-family: 'Proxima N W01 Bold';
+  font-weight: normal; }
+
 h2 {
   font-size: 20px;
   font-weight: normal;
@@ -344,31 +350,67 @@ header {
   width: 100%;
   padding: 10px 0; }
 
-section#start {
-  background: #fff url("../../assets/gradient.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden;
-  padding-top: 5%; }
-  section#start .preview {
+section {
+  padding: 30px 0;
+  background-color: #abb3c3; }
+  section:nth-child(odd) {
+    background-color: #3e4448;
+    color: #abb3c3; }
+  section#start {
+    background: #fff url("../../assets/gradient.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    padding-top: 5%; }
+    section#start .preview {
+      width: 100%;
+      margin: 0 auto;
+      display: block; }
+  section#steps {
+    background-color: #464E51;
+    color: #abb3c3; }
+    section#steps .instructions h3 {
+      font-family: 'Proxima N W01 Bold';
+      font-weight: normal; }
+    section#steps .instructions .item:first-child span {
+      color: #2fc4db; }
+    section#steps .instructions .item:nth-child(2) span {
+      color: #51f491; }
+    section#steps .instructions .item:last-child span {
+      color: #e0ff4f; }
+
+form {
+  text-align: left; }
+  form ::-webkit-input-placeholder {
+    color: #464E51; }
+  form :-moz-placeholder {
+    /* Firefox 18- */
+    color: #464E51; }
+  form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #464E51; }
+  form :-ms-input-placeholder {
+    color: #464E51; }
+  form label {
+    font-size: 16px; }
+  form textarea {
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Proxima Nova W08 Reg';
+    font-weight: normal;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
     width: 100%;
-    margin: 0 auto;
-    display: block; }
-section#steps {
-  background-color: #464E51;
-  color: #abb3c3; }
-  section#steps .instructions h3 {
-    font-family: 'Proxima N W01 Bold';
-    font-weight: normal; }
-  section#steps .instructions .item:first-child span {
-    color: #2fc4db; }
-  section#steps .instructions .item:nth-child(2) span {
-    color: #51f491; }
-  section#steps .instructions .item:last-child span {
-    color: #e0ff4f; }
-  section#steps form input {
+    height: 150px;
+    border: 0 none;
+    color: #464E51;
+    background-color: rgba(255, 255, 255, 0.5);
+    resize: none;
+    display: block;
+    margin-bottom: 20px; }
+  form input {
     border: 0 none;
     padding: 11px 20px 12px;
     font-size: 18px;
@@ -381,9 +423,9 @@ section#steps {
     transition: all 200ms ease-in;
     background-color: rgba(255, 255, 255, 0.5);
     width: 85%; }
-    section#steps form input:hover, section#steps form input:active {
+    form input:hover, form input:active {
       background-color: rgba(255, 255, 255, 0.8); }
-  section#steps form button {
+  form button, form input[type="submit"] {
     border: 0 none;
     background-color: #e51f62;
     color: #fff;
@@ -400,14 +442,93 @@ section#steps {
     font-family: 'Proxima N W01 Bold';
     font-weight: normal;
     width: 100%; }
-    section#steps form button:hover {
+    form button:hover, form input[type="submit"]:hover {
       background-color: #c41752; }
+  form select {
+    -moz-appearance: none;
+    -webkit-appeareance: none;
+    font-family: 'Proxima Nova W08 Reg';
+    font-weight: normal;
+    font-size: 16px;
+    height: 40px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #464E51;
+    border: 0 none;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    display: block; }
 
 footer {
   background-color: #3e4448;
   padding: 20px 0;
   color: #abb3c3;
   height: 50px; }
+
+.onoffswitch {
+  position: relative;
+  width: 90px;
+  margin-bottom: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.onoffswitch-checkbox {
+  display: none; }
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #abb3c3;
+  border-radius: 4px; }
+
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s; }
+  .onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box; }
+  .onoffswitch-inner:before {
+    content: "Yes";
+    padding-left: 10px;
+    background-color: #2fc4db;
+    color: #fff; }
+  .onoffswitch-inner:after {
+    content: "No";
+    padding-right: 10px;
+    background-color: #e51f62;
+    color: #fff;
+    text-align: right; }
+
+.onoffswitch-switch {
+  display: block;
+  width: 21px;
+  margin: 4.5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #abb3c3;
+  border-radius: 4px;
+  transition: all 0.3s ease-in 0s; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0; }
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   form input {

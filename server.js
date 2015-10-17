@@ -6,38 +6,54 @@ var googleSpreadsheets = require('google-spreadsheet')
 var app = express()
 
 app.get('/', function (req, res) {
-  res.sendfile('index.html');
+  res.sendFile(__dirname + '/index.html');
 });
+
+app.use(bodyParser.urlencoded({ extended: true })); // Parses application/x-www-form-urlencoded
+
+app.post('/', function (req, res){
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'maru@bxe.me',
+            pass: 'maruxmaruxmaru'
+        }
+    });
+
+    console.log(req.body)
+
+    var email = req.body.email || 'hola@maruma.ru'
+
+    var mensaje  = req.body.mensaje || (req.body.email + ' Has requested to join the list on OpenCollective');
+    var subject = req.body.asunto || 'Mailing List Candidate';
+    if(req.body.mensaje){
+        mensaje += "<br>" +"<br>" +"---" +"<br>" +"<br>" + email + " has requested to join the mailing list and be a candidate for OpenCollective"
+    }
+      // setup e-mail data with unicode symbols
+      var mailOptions = {
+        from: 'maru@bxe.me', // sender address
+        to: 'hola@maruma.ru', // list of receivers
+        subject: 'Mailing List Candidate', // Subject line
+        text: req.body.email+' Has requested to join the list on OpenCollective', // plaintext body
+        html: '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            res.status(400, 'Not happening.')
+            res.send('Nope. This is a failure.')
+        } else {
+            res.status(200, 'Yay! Here goes!')
+            res.redirect('/')
+        }
+    });
+
+})
 
 app.use('/styles', express.static(__dirname + '/styles'));
 app.use('/assets', express.static(__dirname + '/assets'));
-
-// create reusable transporter object using SMTP transport 
-var transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: 'EMAILHERE',
-        pass: 'PASSWORDHERE'
-    }
-});
- 
-
-// setup e-mail data with unicode symbols 
-var mailOptions = {
-    from: 'Sample Mail <hola@maruma.ru>', // sender address 
-    to: 'Sample Mail <hola@maruma.ru>', // list of receivers 
-    subject: 'Hello ✔', // Subject line 
-    text: 'Hello world ✔', // plaintext body 
-    html: '<b>Hello world ✔</b>' // html body 
-};
- 
-// send mail with defined transport object 
-transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        return console.log(error);
-    }
-    console.log('Message sent: ' + info.response);
-});
+app.use('/js', express.static(__dirname + '/js'));
 
 var server = app.listen(3000, function () {
   var host = server.address().address

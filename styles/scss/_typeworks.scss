@@ -8,6 +8,12 @@ body {
     @include regular;
 }
 
+h1 {
+    font-size: 30px;
+    font-weight: normal;
+    @include bold;
+}
+
 h2 {
     font-size: 20px;
     font-weight: normal;
