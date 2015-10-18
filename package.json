@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Website for OpenCollective",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "morgan": "^1.6.1"
+  },
   "devDependencies": {
     "body-parser": "^1.14.1",
     "email-templates": "^2.0.1",

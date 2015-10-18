@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="styles/css/style.css">
     <script type="text/javascript" src="http://fast.fonts.net/jsapi/b4704ba9-716c-4487-b5a4-2f3c5fb7f567.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -377,21 +376,35 @@
     <script type="text/javascript">
 
     $(document).ready(function(){
-        $('#firstForm').submit(function(e){
+        $('#firstForm').on('submit', function(e){
             e.preventDefault();
             $.ajax({
                 url:'/',
-                data:$('#firstForm').serialize(),
-                type:'post',
-                success:function(){
-                    $('#followup').removeClass('hidden');
-                    $('html,body').animate({
-                        scrollTop: $("#followup").offset().top
-                    },'slow');
-                }
+                data:$(this).serialize(),
+                method: 'post'
+            })
+            .done(function(){
+                $('#followup').removeClass('hidden');
+                $('html,body').animate({
+                    scrollTop: $("#followup").offset().top
+                },'slow');
             });
             var candidate = $('#candidate').val();
             $('#follows').val(candidate)
+        });
+
+        $("#followform").on('submit', function(e){
+            e.preventDefault()
+            //$.get("http://localhost:3000/send", {to:to,subject:subject,text:text});
+            $.ajax({
+                url: '/send',
+                method: 'post',
+                dataType: 'json',
+                data:$(this).serialize(),
+            })
+            .done(function () {
+                console.log('PUCHI')
+            })
         });
     });
     </script>
