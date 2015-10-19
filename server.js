@@ -16,8 +16,8 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'SENDEREMAIL',
-            pass: 'PASSWORD'
+            user: config.mailer.auth.user,
+            pass: config.mailer.auth.pass
         }
     });
 
