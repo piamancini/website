@@ -5,6 +5,6 @@ module.exports = {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASSWORD
     },
-    defaultFromAddress: 'Name LastName <sender@doma.in>'
+    defaultFromAddress: 'OpenCollective Bot <hello@opencollective.org>'
     }
 }

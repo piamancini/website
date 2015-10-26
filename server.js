@@ -1,16 +1,17 @@
 'use strict'
 var express = require('express')
+var config = require('./config')
 var nodemailer = require('nodemailer')
 var bodyParser = require('body-parser')
 var googleSpreadsheets = require('google-spreadsheet')
 var app = express()
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
+  res.sendFile(__dirname + '/public/index.html')
+})
 
 app.use(bodyParser.json())
-app.use( bodyParser.urlencoded( { extended: true } ) );
+app.use( bodyParser.urlencoded( { extended: true } ) )
 
 
 var transporter = nodemailer.createTransport({
@@ -27,10 +28,10 @@ app.post('/', function (req, res){
 
       // setup e-mail data with unicode symbols
       var mailOptions = {
-        from: 'SENDEREMAIL', // sender address
-        to: 'RECEIVEREMAIL', // list of receivers
+        from: 'maru@bxe.me', // sender address
+        to: 'hola@maruma.ru', // list of receivers
         subject: 'Mailing List Candidate', // Subject line
-        text: req.body.email + ' Puchi', // plaintext body
+        text: req.body.email + ' Requested to join the beta for OpenCollective', // plaintext body
         html: '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective' // html body
     };
 
@@ -54,8 +55,8 @@ app.post('/send',function(req, res){
     // setup e-mail data with unicode symbols
 
     var options = {
-        from: 'SENDEREMAIL', // sender address
-        to: 'RECEIVEREMAIL', // list of receivers
+        from: 'maru@bxe.me', // sender address
+        to: 'hola@maruma.ru', // list of receivers
         subject: 'Follow up for Candidate ' + candidate, // Subject line
         text: 'Follow up for Candidate' + candidate, // plaintext body
         html: 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Reason/Project: ' + textarea + '<br/> Country: ' + country + '<br/> Account: ' + account + '<br/> Expected Profit: ' + select // html body
@@ -70,19 +71,16 @@ app.post('/send',function(req, res){
         }
         console.log('ok')
         res.sendStatus(200, 'Yay! Here goes!')
-    });
+    })
 
-});
+})
 
-app.use(require('morgan')())
-
-app.use('/styles', express.static(__dirname + '/styles'));
-app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/js', express.static(__dirname + '/js'));
+app.use('/styles', express.static(__dirname + '/public/styles'))
+app.use('/assets', express.static(__dirname + '/public/assets'))
 
 var server = app.listen(3000, function () {
   var host = server.address().address
   var port = server.address().port
 
   console.log('Life signals at http://%s:%s', host, port)
-});
+})
