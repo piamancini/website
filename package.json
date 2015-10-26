@@ -4,21 +4,17 @@
   "description": "Website for OpenCollective",
   "main": "server.js",
   "engines": {
-    "npm": "2.14.7"
+    "npm": ">= 2.0.0"
   },
   "devDependencies": {
     "body-parser": "^1.14.1",
     "email-templates": "^2.0.1",
     "express": "^4.13.3",
     "google-spreadsheet": "^1.0.1",
-    "nodemailer": "^1.8.0",
-    "require": "^2.4.20"
+    "nodemailer": "^1.8.0"
   },
   "engines": {
-    "node": "4.2.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "node": ">= 4.0.0"
   },
   "repository": {
     "type": "git",
