@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Website for OpenCollective",
   "main": "server.js",
+  "engines": {
+    "npm": "2.14.7"
+  },
   "devDependencies": {
     "body-parser": "^1.14.1",
     "email-templates": "^2.0.1",
