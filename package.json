@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "Website for OpenCollective",
   "main": "server.js",
-  "dependencies": {
-    "morgan": "^1.6.1"
-  },
   "devDependencies": {
     "body-parser": "^1.14.1",
     "email-templates": "^2.0.1",
     "express": "^4.13.3",
     "google-spreadsheet": "^1.0.1",
-    "nodemailer": "^1.8.0"
+    "nodemailer": "^1.8.0",
+  },
+  "engines": {
+    "node": "4.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
