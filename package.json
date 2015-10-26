@@ -9,6 +9,7 @@
     "express": "^4.13.3",
     "google-spreadsheet": "^1.0.1",
     "nodemailer": "^1.8.0",
+    "require": "^2.4.20"
   },
   "engines": {
     "node": "4.2.1"
