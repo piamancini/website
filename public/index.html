@@ -388,6 +388,13 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 250) {
+                    $("header").addClass("active");
+                } else {
+                   $("header").removeClass("active");
+                }
+            });
             $('#firstForm').on('submit', function(e){
                 e.preventDefault();
                 $.ajax({

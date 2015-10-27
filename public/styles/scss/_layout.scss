@@ -10,6 +10,10 @@ header {
     z-index: 100;
     width: 100%;
     padding: 10px 0;
+    @include transition;
+    &.active {
+      background-color: transparentize($light, .2);
+    }
 }
 
 section {
@@ -106,6 +110,7 @@ form {
         font-size: 18px;
         @include border-radius(2px);
         @include transition;
+        @include border-box;
         background-color: transparentize($light, .5);
         width: 85%;
 

@@ -362,7 +362,14 @@ header {
   top: 0;
   z-index: 100;
   width: 100%;
-  padding: 10px 0; }
+  padding: 10px 0;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in; }
+  header.active {
+    background-color: rgba(255, 255, 255, 0.8); }
 
 section {
   padding: 30px 0;
@@ -444,6 +451,12 @@ form {
     -ms-transition: all 200ms ease-in;
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
     background-color: rgba(255, 255, 255, 0.5);
     width: 85%; }
     form input:hover, form input:active {
