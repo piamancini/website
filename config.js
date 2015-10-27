@@ -1,5 +1,4 @@
 module.exports = {
-  rotation: process.env.ROTATION || '60m',
   mailer: {
     auth: {
         user: process.env.MAIL_USER,

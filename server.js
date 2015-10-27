@@ -24,8 +24,6 @@ var transporter = nodemailer.createTransport({
 
 app.post('/', function (req, res){
 
-    console.log(req.body)
-
       // setup e-mail data with unicode symbols
       var mailOptions = {
         from: 'maru@bxe.me', // sender address
