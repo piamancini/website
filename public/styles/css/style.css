@@ -396,7 +396,7 @@ section {
 
 form {
   text-align: left; }
-  form #followform textarea, form #followform select, form #followform option, form #followform button, form #followform input {
+  form#followform textarea, form#followform select, form#followform option, form#followform button, form#followform input {
     width: 100%; }
   form ::-webkit-input-placeholder {
     color: #464E51; }
