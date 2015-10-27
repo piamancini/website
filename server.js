@@ -75,6 +75,7 @@ app.post('/send',function(req, res){
 
 app.use('/styles', express.static(__dirname + '/public/styles'))
 app.use('/assets', express.static(__dirname + '/public/assets'))
+app.use('/js', express.static(__dirname + '/public/js'))
 
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address

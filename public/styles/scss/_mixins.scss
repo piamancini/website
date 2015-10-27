@@ -1,5 +1,41 @@
 //_mixins.scss
 
+
+/* `Fonts.com import mixin
+------------------------------------------------------------------------------------------------------------------------------------*/
+@mixin font-face($style-name, $file, $category:"") {
+  $filepath: "../../assets/fonts/" + $file;
+  @font-face {
+    font-family: $style-name;
+    src: url($filepath + ".eot");
+    src: url($filepath + ".eot?#iefix") format('embedded-opentype'), 
+    url($filepath + ".woff") format('woff'), 
+    url($filepath + ".woff2") format('woff'), 
+    url($filepath + ".ttf")  format('truetype'), 
+    url($filepath + ".svg#" + $file + "") format('svg');
+  }
+}
+
+@include font-face('bold', 'bold', 'sans-serif');
+@include font-face('italic', 'italic', 'sans-serif');
+@include font-face('regular', 'regular', 'sans-serif');
+
+
+@mixin bold {
+  font-family: 'bold', sans-serif;
+  font-weight: normal;
+}
+
+@mixin regular {
+  font-family: 'regular', sans-serif;
+  font-weight: normal;
+}
+
+@mixin italic {
+  font-family: 'italic', sans-serif;
+  font-weight: normal;
+}
+
 @mixin bgcover {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -29,21 +65,6 @@
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-@mixin regular {
-    font-family:'Proxima Nova W08 Reg';
-    font-weight: normal;
-}
-
-@mixin semibold {
-    font-family:'Proxima N W01 Smbd';
-    font-weight: normal;
-}
-
-@mixin bold {
-    font-family:'Proxima N W01 Bold';
-    font-weight: normal;
 }
 
 @mixin font-smoothing($value: antialiased) {

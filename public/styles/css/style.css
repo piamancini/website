@@ -35,6 +35,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* `Fonts.com import mixin
+------------------------------------------------------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: "bold";
+  src: url("../../assets/fonts/bold.eot");
+  src: url("../../assets/fonts/bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/bold.woff") format("woff"), url("../../assets/fonts/bold.woff2") format("woff"), url("../../assets/fonts/bold.ttf") format("truetype"), url("../../assets/fonts/bold.svg#bold") format("svg"); }
+@font-face {
+  font-family: "italic";
+  src: url("../../assets/fonts/italic.eot");
+  src: url("../../assets/fonts/italic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/italic.woff") format("woff"), url("../../assets/fonts/italic.woff2") format("woff"), url("../../assets/fonts/italic.ttf") format("truetype"), url("../../assets/fonts/italic.svg#italic") format("svg"); }
+@font-face {
+  font-family: "regular";
+  src: url("../../assets/fonts/regular.eot");
+  src: url("../../assets/fonts/regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/regular.woff") format("woff"), url("../../assets/fonts/regular.woff2") format("woff"), url("../../assets/fonts/regular.ttf") format("truetype"), url("../../assets/fonts/regular.svg#regular") format("svg"); }
 container, .container {
   padding-right: 5px;
   padding-left: 5px;
@@ -291,25 +305,22 @@ container, .container {
     margin-left: 0; } }
 body {
   font-size: 20px;
-  font-weight: normal;
   color: #464E51;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Proxima Nova W08 Reg';
+  font-family: 'regular', sans-serif;
   font-weight: normal; }
 
 h1 {
   font-size: 30px;
-  font-weight: normal;
-  font-family: 'Proxima N W01 Bold';
+  font-family: 'bold', sans-serif;
   font-weight: normal; }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
+  font-family: 'regular', sans-serif;
   font-weight: normal;
-  font-family: 'Proxima Nova W08 Reg';
-  font-weight: normal;
-  line-height: 26px; }
+  line-height: 28px; }
 
 nav {
   text-transform: uppercase;
@@ -319,7 +330,6 @@ p {
   line-height: 26px; }
 
 ul li, ol li {
-  font-weight: normal;
   display: inline;
   font-size: 12px;
   margin-right: 60px; }
@@ -333,10 +343,13 @@ a {
   a:hover {
     text-decoration: underline; }
 
-form input, form button {
-  font-size: 16px;
-  @font-weight : normal;
-  font-family: 'Proxima Nova W08 Reg';
+form input, form button, form textarea, form select {
+  font-size: 16px; }
+form button {
+  font-family: 'bold', sans-serif;
+  font-weight: normal; }
+form input, form textarea {
+  font-family: 'italic', sans-serif;
   font-weight: normal; }
 
 html, body {
@@ -372,7 +385,7 @@ section {
     background-color: #464E51;
     color: #abb3c3; }
     section#steps .instructions h3 {
-      font-family: 'Proxima N W01 Bold';
+      font-family: 'bold', sans-serif;
       font-weight: normal; }
     section#steps .instructions .item:first-child span {
       color: #2fc4db; }
@@ -383,6 +396,8 @@ section {
 
 form {
   text-align: left; }
+  form #followform textarea, form #followform select, form #followform option, form #followform button, form #followform input {
+    width: 100%; }
   form ::-webkit-input-placeholder {
     color: #464E51; }
   form :-moz-placeholder {
@@ -398,11 +413,17 @@ form {
   form textarea {
     padding: 10px;
     font-size: 16px;
-    font-family: 'Proxima Nova W08 Reg';
+    font-family: 'regular', sans-serif;
     font-weight: normal;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    width: 100%;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    width: 85%;
     height: 150px;
     border: 0 none;
     color: #464E51;
@@ -439,7 +460,7 @@ form {
     -ms-transition: all 200ms ease-in;
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
-    font-family: 'Proxima N W01 Bold';
+    font-family: 'bold', sans-serif;
     font-weight: normal;
     width: 100%; }
     form button:hover, form input[type="submit"]:hover {
@@ -447,7 +468,7 @@ form {
   form select {
     -moz-appearance: none;
     -webkit-appeareance: none;
-    font-family: 'Proxima Nova W08 Reg';
+    font-family: 'regular', sans-serif;
     font-weight: normal;
     font-size: 16px;
     height: 40px;
