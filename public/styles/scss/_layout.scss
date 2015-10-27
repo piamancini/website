@@ -83,6 +83,7 @@ form {
     }
     label {
         font-size: 16px;
+        line-height: 26px;
     }
     textarea {
         padding: 10px;
@@ -140,6 +141,7 @@ form {
         background-color: transparentize($light, .5);
         margin-bottom: 20px;
         display: block;
+        padding: 0 15px;
     }
 }
 
@@ -156,7 +158,6 @@ footer {
 .onoffswitch {
   position: relative;
   width: 90px;
-  margin-bottom: 20px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -170,8 +171,7 @@ footer {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid $light-gray;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .onoffswitch-inner {
@@ -183,24 +183,24 @@ footer {
     display: block;
     float: left;
     width: 50%;
-    height: 30px;
+    height: 40px;
     padding: 0;
-    line-height: 30px;
-    font-size: 14px;
+    line-height: 40px;
+    font-size: 16px;
     color: white;
     font-family: Trebuchet, Arial, sans-serif;
     font-weight: bold;
     box-sizing: border-box;
   }
   &:before {
-    content: "Yes";
-    padding-left: 10px;
-    background-color: $cyan;
+    content: "YES";
+    padding-left: 15px;
+    background-color: $blue;
     color: $light;
   }
   &:after {
-    content: "No";
-    padding-right: 10px;
+    content: "NO";
+    padding-right: 15px;
     background-color: $pinkish-red;
     color: $light;
     text-align: right;
@@ -209,15 +209,15 @@ footer {
 
 .onoffswitch-switch {
   display: block;
-  width: 21px;
-  margin: 4.5px;
+  width: 18px;
+  margin: 11px;
   background: $light;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 56px;
-  border: 2px solid $light-gray;
-  border-radius: 4px;
+  right: 46px;
+  border: 2px solid $light;
+  border-radius: 5px;
   transition: all 0.3s ease-in 0s;
 }
 
