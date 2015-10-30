@@ -501,6 +501,8 @@ footer {
   padding: 20px 0;
   color: #abb3c3;
   height: 50px; }
+  footer .logo {
+    width: 100%; }
 
 .onoffswitch {
   position: relative;
