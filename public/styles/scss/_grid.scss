@@ -18,9 +18,21 @@ container, .container {
     box-sizing: border-box;
     height: 100%;
     @include border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    -webkit-box-flex: 0;
     flex: 0 1 auto;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: $gutter-compensation;
     margin-left: $gutter-compensation;
@@ -28,11 +40,6 @@ container, .container {
         flex-direction: row-reverse;
     }
 }
-
-.col.reverse {
-    flex-direction: column-reverse;
-}
-
 
 @mixin apush {
     @for $i from 0 through $columns {
@@ -52,59 +59,91 @@ container, .container {
 .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-offset-1, .col-offset-2, .col-offset-3, .col-offset-4, .col-offset-5, .col-offset-6, .col-offset-7, .col-offset-8, .col-offset-9, .col-offset-10, .col-offset-11, .col-offset-12 {
     box-sizing: border-box;
     flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
     padding-right: $half-gutter-width;
     padding-left: $half-gutter-width;
 }
 .col {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-box-flex: 1;
     flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    -webkit-flex-basis: 0;
     flex-basis: 0;
     max-width: 100%;
 }
 .col-1 {
+    -ms-flex-preferred-size: 8.333%;
+    -webkit-flex-basis: 8.333%;
     flex-basis: 8.333%;
     max-width: 8.333%;
 }
 .col-2 {
+    -ms-flex-preferred-size: 16.667%;
+    -webkit-flex-basis: 16.667%;
     flex-basis: 16.667%;
     max-width: 16.667%;
 }
 .col-3 {
+    -ms-flex-preferred-size: 25%;
+    -webkit-flex-basis: 25%;
     flex-basis: 25%;
     max-width: 25%;
 }
 .col-4 {
+    -ms-flex-preferred-size: 33.333%;
+    -webkit-flex-basis: 33.333%;
     flex-basis: 33.333%;
     max-width: 33.333%;
 }
 .col-5 {
+    -ms-flex-preferred-size: 41.667%;
+    -webkit-flex-basis: 41.667%;
     flex-basis: 41.667%;
     max-width: 41.667%;
 }
 .col-6 {
+    -ms-flex-preferred-size: 50%;
+    -webkit-flex-basis: 50%;
     flex-basis: 50%;
     max-width: 50%;
 }
 .col-7 {
+    -ms-flex-preferred-size: 58.333%;
+    -webkit-flex-basis: 58.333%;
     flex-basis: 58.333%;
     max-width: 58.333%;
 }
 .col-8 {
+    -ms-flex-preferred-size: 66.667%;
+    -webkit-flex-basis: 66.667%;
     flex-basis: 66.667%;
     max-width: 66.667%;
 }
 .col-9 {
+    -ms-flex-preferred-size: 75%;
+    -webkit-flex-basis: 75%;
     flex-basis: 75%;
     max-width: 75%;
 }
 .col-10 {
+    -ms-flex-preferred-size: 83.333%;
+    -webkit-flex-basis: 83.333%;
     flex-basis: 83.333%;
     max-width: 83.333%;
 }
 .col-11 {
+    -ms-flex-preferred-size: 91.667%;
+    -webkit-flex-basis: 91.667%;
     flex-basis: 91.667%;
     max-width: 91.667%;
 }
 .col-12 {
+    -ms-flex-preferred-size: 100%;
+    -webkit-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%;
 }
@@ -185,17 +224,16 @@ container, .container {
 }
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
-        flex-grow: 1;
-        flex-basis: 0;
-        max-width: 100%;
+        display: inline-block;
         min-width: 100%;
+        width: 100%
     }
 
     row, .row {
-        width: 98%;
-        max-width: 98%;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto
     }
 

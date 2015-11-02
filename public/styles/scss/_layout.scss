@@ -1,7 +1,4 @@
 //_layout.scss
-html, body {
-    height: 100%;
-}
 
 header {
     height: 5%;
@@ -129,6 +126,8 @@ form {
         @include transition;
         @include bold;
         width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
         &:hover {
             background-color: darken($pinkish-red, 8%)
         }
@@ -243,10 +242,13 @@ footer {
     visibility: hidden;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
     form {
         input {
             width: 100%;
+        }
+        input[type="submit"] {
+          margin-top: 10px;
         }
     }
 }
