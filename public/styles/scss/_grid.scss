@@ -217,27 +217,48 @@ container, .container {
     order: 1;
 }
 .alpha {
-    padding-left: 0; 
+    padding-left: 0;
 }
 .omega {
     padding-right: 0;
 }
 
+.menu {
+    text-align: right;
+    line-height: 27px;
+}
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
-    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
-        display: inline-block;
-        min-width: 100%;
-        width: 100%
+@media only screen and (max-width: 480px) {
+
+    #start {
+        .col-5 {
+            -ms-flex-preferred-size: 100%;
+            -webkit-flex-basis: 100%;
+            flex-basis: 100%;
+            max-width: 100%;
+            margin-left: 0;
+        }
     }
 
-    row, .row {
-        width: 100%;
+    footer .col-2,
+    .instructions .col-3 {
+        -ms-flex-preferred-size: 100%;
+        -webkit-flex-basis: 100%;
+        flex-basis: 100%;
         max-width: 100%;
-        margin: 0 auto
     }
 
-    .col-offset-1 ,.col-offset-2 ,.col-offset-3 ,.col-offset-4 ,.col-offset-5 ,.col-offset-6 ,.col-offset-7 ,.col-offset-8 ,.col-offset-9 ,.col-offset-10 ,.col-offset-11 {
-        margin-left: 0;
+    #form-container {
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .col-8, .col-4, .col-6 {
+            -ms-flex-preferred-size: 100%;
+            -webkit-flex-basis: 100%;
+            flex-basis: 100%;
+            max-width: 100%;
+        }
     }
 }

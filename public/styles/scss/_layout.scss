@@ -1,7 +1,6 @@
 //_layout.scss
 
 header {
-    height: 5%;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -72,15 +71,15 @@ form {
     }
 
     :-moz-placeholder { /* Firefox 18- */
-       color: $base;  
+       color: $base;
     }
 
     ::-moz-placeholder {  /* Firefox 19+ */
-       color: $base;  
+       color: $base;
     }
 
-    :-ms-input-placeholder {  
-       color: $base;  
+    :-ms-input-placeholder {
+       color: $base;
     }
     label {
         font-size: 16px;
