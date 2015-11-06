@@ -452,7 +452,7 @@ section {
       font-family: 'bold', sans-serif;
       font-weight: normal; }
     section#steps .instructions .item img {
-      max-height: 35px; }
+      max-height: 40px; }
     section#steps .instructions .item:first-child span {
       color: #2fc4db; }
     section#steps .instructions .item:nth-child(2) span {
