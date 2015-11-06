@@ -84,7 +84,7 @@
         </div>
     </footer>
 
-    <section id="followup">
+    <section id="followup" class="hidden">
         <div class="container">
             <div class="row center">
                 <div class="col-8">
@@ -397,16 +397,16 @@
             });
 
             $("#followform").on('submit', function(e){
+                alert('Thank you! We will get in touch soon');
                 e.preventDefault()
                 $.ajax({
                     url: '/send',
                     method: 'post',
                     dataType: 'json',
-                    data:$(this).serialize(),
+                    data:$(this).serialize()
                 })
                 .done(function () {
                     console.log('PUCHI')
-                    alert('Thank you! We will get in touch soon')
                 })
             });
         });
