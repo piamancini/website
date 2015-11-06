@@ -38,11 +38,6 @@ ul, ol {
     li {
         display: inline;
         font-size: 12px;
-        //bold
-        margin-right: 60px;
-        &:not(:first-child) {
-            margin-right: 0;
-        }
         a {
             color: $base;
         }

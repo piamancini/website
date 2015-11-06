@@ -10,6 +10,9 @@ header {
     &.active {
       background-color: transparentize($light, .2);
     }
+    img {
+      max-width: 35px;
+    }
 }
 
 section {
@@ -39,6 +42,9 @@ section {
                 @include bold;
             }
             .item {
+              img {
+                max-height: 35px;
+              }
                 &:first-child {
                     span {
                         color: $cyan;
