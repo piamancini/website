@@ -26,7 +26,7 @@ app.post('/', function (req, res){
 
       // setup e-mail data with unicode symbols
       var mailOptions = {
-        from: 'maru@bxe.me', // sender address
+        from: 'invite@opencollective.com', // sender address
         to: 'invite@opencollective.com', // list of receivers
         subject: 'Invitation request', // Subject line
         text: req.body.email + ' Requested to join the beta for OpenCollective', // plaintext body
@@ -48,16 +48,15 @@ app.post('/send',function(req, res){
     var candidate = req.body.candidate
     var textarea = req.body.textarea
     var country = req.body.country
-    var account = req.body.onoffswitch
     var select = req.body.select
     // setup e-mail data with unicode symbols
 
     var options = {
-        from: 'maru@bxe.me', // sender address
-        to: 'hola@maruma.ru', // list of receivers
+        from: 'invite@opencollective.com', // sender address
+        to: 'invite@opencollective.com', // list of receivers
         subject: 'Follow up for Candidate ' + candidate, // Subject line
-        text: 'Follow up for Candidate' + candidate, // plaintext body
-        html: 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Reason/Project: ' + textarea + '<br/> Country: ' + country + '<br/> Account: ' + account + '<br/> Expected Profit: ' + select // html body
+        text: 'Follow up for Candidate ' + candidate, // plaintext body
+        html: 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Reason/Project: ' + textarea + '<br/> Country: ' + country + '<br/> Expected Profit: ' + select // html body
     };
 
     console.log(options)

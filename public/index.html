@@ -94,6 +94,8 @@
                         <label>Why are you interested and what project would you use it for?</label>
                         <textarea name="textarea" placeholder="This will put you higher up in the list!"></textarea>
 
+                        <input id="follows" name="candidate" value="" class="hidden" />
+
                             <div class="col-12">
                                 <label>Where are you based?</label>
                                 <select name="country">
@@ -372,9 +374,9 @@
         $(document).ready(function(){
             $(window).on("scroll", function() {
                 if($(window).scrollTop() > 50) {
-                    $("header").addClass("active");
+                    $("header").addClass("active")
                 } else {
-                   $("header").removeClass("active");
+                   $("header").removeClass("active")
                 }
             });
             $('#firstForm').on('submit', function(e){
@@ -385,7 +387,7 @@
                     method: 'post'
                 })
                 .done(function(){
-                    $('#followup').removeClass('hidden');
+                    $('#followup').removeClass('hidden')
                     $('html,body').animate({
                         scrollTop: $("#followup").offset().top
                     },'slow');
@@ -404,6 +406,7 @@
                 })
                 .done(function () {
                     console.log('PUCHI')
+                    alert('Thank you! We will get in touch soon')
                 })
             });
         });
