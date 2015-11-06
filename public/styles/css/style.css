@@ -464,6 +464,10 @@ form {
   text-align: left; }
   form#followform textarea, form#followform select, form#followform option, form#followform button, form#followform input {
     width: 100%; }
+  form#followform input[type="submit"] {
+    margin: 0 auto;
+    display: block;
+    max-width: 50%; }
   form ::-webkit-input-placeholder {
     color: #464E51; }
   form :-moz-placeholder {
@@ -521,23 +525,23 @@ form {
       background-color: rgba(255, 255, 255, 0.8); }
   form button, form input[type="submit"] {
     border: 0 none;
-    background-color: #e51f62;
     color: #fff;
     padding: 10px 20px;
     font-size: 18px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
     cursor: pointer;
+    font-family: 'bold', sans-serif;
+    font-weight: normal;
     -webkit-transition: all 200ms ease-in;
     -moz-transition: all 200ms ease-in;
     -ms-transition: all 200ms ease-in;
     -o-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
-    font-family: 'bold', sans-serif;
-    font-weight: normal;
-    width: 100%;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #e51f62;
     -webkit-appearance: none;
-    -moz-appearance: none; }
+    -moz-appearance: none;
+    text-align: center; }
     form button:hover, form input[type="submit"]:hover {
       background-color: #c41752; }
   form select {

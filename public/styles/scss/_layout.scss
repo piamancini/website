@@ -70,6 +70,11 @@ form {
       textarea, select, option, button, input {
         width: 100%;
       }
+      input[type="submit"]{
+        margin: 0 auto;
+        display: block;
+        max-width: 50%;
+      }
     }
     text-align: left;
     ::-webkit-input-placeholder {
@@ -122,17 +127,17 @@ form {
     }
     button, input[type="submit"] {
         border: 0 none;
-        background-color: $pinkish-red;
         color: $light;
         padding: 10px 20px;
         font-size: 18px;
-        @include border-radius(2px);
         cursor: pointer;
-        @include transition;
         @include bold;
-        width: 100%;
+        @include transition;
+        @include border-radius(2px);
+        background-color: $pinkish-red;
         -webkit-appearance: none;
         -moz-appearance: none;
+        text-align: center;
         &:hover {
             background-color: darken($pinkish-red, 8%)
         }
