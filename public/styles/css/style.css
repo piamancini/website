@@ -466,8 +466,7 @@ form {
     width: 100%; }
   form#followform input[type="submit"] {
     margin: 0 auto;
-    display: block;
-    max-width: 50%; }
+    display: block; }
   form ::-webkit-input-placeholder {
     color: #464E51; }
   form :-moz-placeholder {
