@@ -27,8 +27,8 @@ app.post('/', function (req, res){
       // setup e-mail data with unicode symbols
       var mailOptions = {
         from: 'maru@bxe.me', // sender address
-        to: 'hola@maruma.ru', // list of receivers
-        subject: 'Mailing List Candidate', // Subject line
+        to: 'invite@opencollective.com', // list of receivers
+        subject: 'Invitation request', // Subject line
         text: req.body.email + ' Requested to join the beta for OpenCollective', // plaintext body
         html: '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective' // html body
     };
