@@ -42,9 +42,6 @@ section {
                 @include bold;
             }
             .item {
-              img {
-                max-height: 40px;
-              }
                 &:first-child {
                     span {
                         color: $cyan;
