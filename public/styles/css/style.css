@@ -41,14 +41,17 @@ table {
   font-family: "bold";
   src: url("../../assets/fonts/bold.eot");
   src: url("../../assets/fonts/bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/bold.woff") format("woff"), url("../../assets/fonts/bold.woff2") format("woff"), url("../../assets/fonts/bold.ttf") format("truetype"), url("../../assets/fonts/bold.svg#bold") format("svg"); }
+
 @font-face {
   font-family: "italic";
   src: url("../../assets/fonts/italic.eot");
   src: url("../../assets/fonts/italic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/italic.woff") format("woff"), url("../../assets/fonts/italic.woff2") format("woff"), url("../../assets/fonts/italic.ttf") format("truetype"), url("../../assets/fonts/italic.svg#italic") format("svg"); }
+
 @font-face {
   font-family: "regular";
   src: url("../../assets/fonts/regular.eot");
   src: url("../../assets/fonts/regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/regular.woff") format("woff"), url("../../assets/fonts/regular.woff2") format("woff"), url("../../assets/fonts/regular.ttf") format("truetype"), url("../../assets/fonts/regular.svg#regular") format("svg"); }
+
 container, .container {
   padding-right: 5px;
   padding-left: 5px;
@@ -341,14 +344,12 @@ container, .container {
     flex-basis: 100%;
     max-width: 100%;
     margin-left: 0; }
-
   footer .col-2,
   .instructions .col-3 {
     -ms-flex-preferred-size: 100%;
     -webkit-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%; }
-
   #form-container input {
     width: 100%;
     margin-bottom: 10px; }
@@ -357,6 +358,7 @@ container, .container {
     -webkit-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%; } }
+
 body {
   font-size: 20px;
   color: #464E51;
@@ -404,9 +406,11 @@ a {
 
 form input, form button, form textarea, form select {
   font-size: 16px; }
+
 form button {
   font-family: 'bold', sans-serif;
   font-weight: normal; }
+
 form input, form textarea {
   font-family: 'italic', sans-serif;
   font-weight: normal; }
@@ -421,7 +425,8 @@ header {
   -moz-transition: all 200ms ease-in;
   -ms-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in; }
+  transition: all 200ms ease-in;
+  -webkit-backdrop-filter: blur(3px); }
   header.active {
     background-color: rgba(255, 255, 255, 0.8); }
   header img {
@@ -627,6 +632,7 @@ footer {
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0; }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; }
 

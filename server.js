@@ -1,14 +1,11 @@
 'use strict'
 var express = require('express')
+var fs = require('fs');
 var config = require('./config')
 var nodemailer = require('nodemailer')
 var bodyParser = require('body-parser')
 var googleSpreadsheets = require('google-spreadsheet')
 var app = express()
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html')
-})
 
 app.use(bodyParser.json())
 app.use( bodyParser.urlencoded( { extended: true } ) )
@@ -75,6 +72,18 @@ app.post('/send',function(req, res){
 app.use('/styles', express.static(__dirname + '/public/styles'))
 app.use('/assets', express.static(__dirname + '/public/assets'))
 app.use('/js', express.static(__dirname + '/public/js'))
+
+app.get('*', function (req, res) {
+  var page = req.url.substr(1) || 'index';
+  var filename = page+'.html';
+  var filepath = __dirname+'/public/'+filename;
+  if (fs.existsSync(filepath)) {
+    res.sendFile(filepath);
+  }
+  else {
+    res.sendStatus(404);
+  }
+})
 
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address
