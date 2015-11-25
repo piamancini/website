@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OpenCollective</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles/css/style.css">
-    <script type="text/javascript" src="js/mtiFontTrackingCode.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCollective</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="styles/css/style.css">
+  <script type="text/javascript" src="js/mtiFontTrackingCode.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="row start">
-                <div class="col-2">
-                    <img src="assets/icon.svg" />
-                </div>
-
-                <div class="col-10 menu">
-                    <ul>
-                        <li><a href="/faq">FAQ</a></li> 
-                        <li><a href="mailto:info@opencollective.com">Contact</a></li>
-                    </ul>
-                </div>
-
-            </nav>
+  <header>
+    <div class="container">
+      <nav class="row start">
+        <div class="col-2">
+          <img src="assets/icon.svg" />
         </div>
-    </header>
 
-    <section>
-      <h1>FAQ</h1>
+        <div class="col-10 menu">
+          <ul>
+            <li><a href="/faq">FAQ</a></li> 
+            <li><a href="mailto:info@opencollective.com">Contact</a></li>
+          </ul>
+        </div>
 
-      <h2>What is OpenCollective?</h2>
-      <p>OpenCollective is an online platform to collect money for your group or project and provide full transparency on how the money is used.</p>
+      </nav>
+    </div>
+  </header>
 
-      <h2>How is that different from KickStarter, IndieGogo or GoFundMe?</h2>
-      <p>All those crowdfunding platforms are meant for well defined projects that have a limited time frame. OpenCollective is meant for groups with a common purpose who have ongoing activities. You don't need to know in advance how much money you need to raise and by when. Unlike those other crowdfunding platforms, the funds raised don't go to a black box. Here, everyone who puts money in a collective can "follow the money".</p>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-10 col-offset-1">
+          <h1>FAQ</h1>
 
-      <h2>What can I do with OpenCollective?<h2>
-      <p>
-      You can:
-        <ul>
-          <li>Set up a page where your members can donate money or pay their membership fee</li>
-          <li>Let your members submit expenses and reimburse them with a click</li>
-          <li>Give visibility to all your members on your budget</li>
-        </ul>
+          <h3>What is OpenCollective?</h3>
+          <p>OpenCollective is an online platform to collect money for your group or project and provide full transparency on how the money is used.</p>
 
-      </p>
+          <h3>How is that different from KickStarter, IndieGogo or GoFundMe?</h3>
+          <p>All those crowdfunding platforms are meant for well defined projects that have a limited time frame. OpenCollective is meant for groups with a common purpose who have ongoing activities. You don't need to know in advance how much money you need to raise and by when. Unlike those other crowdfunding platforms, the funds raised don't go to a black box. Here, everyone who puts money in a collective can "follow the money".</p>
 
-      <h2>What is OpenCollective good for?</h2>
-      <p>OpenCollective is ideal for meetups, open source projects, parent associations, neighborhood associations, clubs, unions, movements, non-profits, etc.</p>
+          <h3>What can I do with OpenCollective?</h3>
+            <p>
+              You can:
+              <ul class="list">
+                <li>Set up a page where your members can donate money or pay their membership fee</li>
+                <li>Let your members submit expenses and reimburse them with a click</li>
+                <li>Give visibility to all your members on your budget</li>
+              </ul>
 
-      <h2>What is OpenCollective For Organizations?</h2>
-      <p>OpenCollective For Organizations lets you empower local chapters who don't have a legal entity and a bank account to raise money and have a budget of their own. By using OpenCollective, you enable them to have a "virtual instance" of your organization. This is the equivalent of acting as a "Fiscal Sponsor". This enables those local groups to collect money from local sponsors and to easily spend money. They don't have anymore to go find a local sponsor to directly pay for the pizzas to organize a meetup.</p>
+            </p>
+
+            <h3>What is OpenCollective good for?</h3>
+            <p>OpenCollective is ideal for meetups, open source projects, parent associations, neighborhood associations, clubs, unions, movements, non-profits, etc.</p>
+
+            <h3>What is OpenCollective For Organizations?</h3>
+            <p>OpenCollective For Organizations lets you empower local chapters who don't have a legal entity and a bank account to raise money and have a budget of their own. By using OpenCollective, you enable them to have a "virtual instance" of your organization. This is the equivalent of acting as a "Fiscal Sponsor". This enables those local groups to collect money from local sponsors and to easily spend money. They don't have anymore to go find a local sponsor to directly pay for the pizzas to organize a meetup.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="row middle">
-                <div class="col-2">
-                    <img src="assets/logo.svg"/ class="logo">
-                </div>
-            </div>
+      <div class="container">
+        <div class="row middle">
+          <div class="col-2">
+            <img src="assets/logo.svg"/ class="logo">
+          </div>
         </div>
+      </div>
     </footer>
 
     <script type="text/javascript">
 
-        $(document).ready(function(){
-            $(window).on("scroll", function() {
-                if($(window).scrollTop() > 50) {
-                    $("header").addClass("active")
-                } else {
-                   $("header").removeClass("active")
-                }
-            });
-        });
-</script>
-</body>
-</html>
+      $(document).ready(function(){
+        $(window).on("scroll", function() {
+          if($(window).scrollTop() > 50) {
+            $("header").addClass("active")
+          } else {
+           $("header").removeClass("active")
+         }
+       });
+      });
+    </script>
+  </body>
+  </html>

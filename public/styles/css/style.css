@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
@@ -41,17 +42,14 @@ table {
   font-family: "bold";
   src: url("../../assets/fonts/bold.eot");
   src: url("../../assets/fonts/bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/bold.woff") format("woff"), url("../../assets/fonts/bold.woff2") format("woff"), url("../../assets/fonts/bold.ttf") format("truetype"), url("../../assets/fonts/bold.svg#bold") format("svg"); }
-
 @font-face {
   font-family: "italic";
   src: url("../../assets/fonts/italic.eot");
   src: url("../../assets/fonts/italic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/italic.woff") format("woff"), url("../../assets/fonts/italic.woff2") format("woff"), url("../../assets/fonts/italic.ttf") format("truetype"), url("../../assets/fonts/italic.svg#italic") format("svg"); }
-
 @font-face {
   font-family: "regular";
   src: url("../../assets/fonts/regular.eot");
   src: url("../../assets/fonts/regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/regular.woff") format("woff"), url("../../assets/fonts/regular.woff2") format("woff"), url("../../assets/fonts/regular.ttf") format("truetype"), url("../../assets/fonts/regular.svg#regular") format("svg"); }
-
 container, .container {
   padding-right: 5px;
   padding-left: 5px;
@@ -344,12 +342,14 @@ container, .container {
     flex-basis: 100%;
     max-width: 100%;
     margin-left: 0; }
+
   footer .col-2,
   .instructions .col-3 {
     -ms-flex-preferred-size: 100%;
     -webkit-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%; }
+
   #form-container input {
     width: 100%;
     margin-bottom: 10px; }
@@ -358,7 +358,6 @@ container, .container {
     -webkit-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%; } }
-
 body {
   font-size: 20px;
   color: #464E51;
@@ -369,6 +368,7 @@ body {
 
 h1 {
   font-size: 40px;
+  margin-bottom: 20px;
   font-family: 'bold', sans-serif;
   font-weight: normal;
   text-transform: uppercase; }
@@ -391,11 +391,12 @@ nav {
   font-size: 12px; }
 
 p {
-  line-height: 26px; }
+  line-height: 26px;
+  font-size: 18px; }
 
 ul li, ol li {
-  display: inline;
-  font-size: 12px; }
+  font-size: 20px;
+  line-height: 26px; }
   ul li a, ol li a {
     color: #464E51; }
 
@@ -406,11 +407,9 @@ a {
 
 form input, form button, form textarea, form select {
   font-size: 16px; }
-
 form button {
   font-family: 'bold', sans-serif;
   font-weight: normal; }
-
 form input, form textarea {
   font-family: 'italic', sans-serif;
   font-weight: normal; }
@@ -429,12 +428,29 @@ header {
   -webkit-backdrop-filter: blur(3px); }
   header.active {
     background-color: rgba(255, 255, 255, 0.8); }
+  header ul li, header ol li {
+    display: inline;
+    font-size: 12px; }
+    header ul li a, header ol li a {
+      color: #464E51; }
   header img {
     max-width: 35px; }
 
+body:not(#home) h3 {
+  color: #34d6bf;
+  margin-top: 40px; }
+body:not(#home) ul.list li {
+  font-size: 18px; }
+  body:not(#home) ul.list li:before {
+    content: "•";
+    font-size: 25px;
+    color: #34d6bf;
+    margin-right: 10px; }
+
 section {
-  padding: 30px 0;
-  background-color: #abb3c3; }
+  padding: 5% 0;
+  background-color: #fff;
+  color: #464E51; }
   section:nth-child(odd) {
     background-color: #3e4448;
     color: #abb3c3; }
@@ -632,7 +648,6 @@ footer {
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0; }
-
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; }
 

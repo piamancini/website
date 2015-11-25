@@ -9,6 +9,7 @@ body {
 
 h1 {
     font-size: 40px;
+    margin-bottom: 20px;
     @include bold;
     text-transform: uppercase;
 }
@@ -32,12 +33,13 @@ nav {
 
 p {
     line-height: 26px;
+    font-size: 18px;
 }
 
 ul, ol {
     li {
-        display: inline;
-        font-size: 12px;
+        font-size: 20px;
+        line-height: 26px;
         a {
             color: $base;
         }
