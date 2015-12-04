@@ -26,9 +26,26 @@ header {
 }
 
 body:not(#home) {
+  .pushdown {
+    margin-top: 60px;
+  }
   h3 {
     color: $turquoise;
     margin-top: 40px;
+
+    a {
+      color: rgb(62,75,80);
+    }
+  }
+  h4 {
+    color: rgb(62,75,80);
+    font-weight: bold;
+    margin-top:20px;
+    margin-bottom: 5px;
+    font-size: 13pt;
+  }
+  p {
+    margin: 10px 0px;
   }
   ul.list {
     li {
