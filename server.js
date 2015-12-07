@@ -24,7 +24,7 @@ app.post('/', function (req, res){
 
       // setup e-mail data with unicode symbols
       var mailOptions = {
-        from: 'invite@opencollective.com', // sender address
+        from: 'website@opencollective.com', // sender address
         to: 'invite@opencollective.com', // list of receivers
         subject: 'Invitation request', // Subject line
         text: req.body.email + ' Requested to join the beta for OpenCollective', // plaintext body
