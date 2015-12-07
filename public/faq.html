@@ -74,6 +74,7 @@
             <h4>How much does it cost?</h4>
             <p>First collective is free. Then it’s $20/month/collective.</p>
 
+<div id="investors" style="display: none;">
             <h3>Who are your investors?</h3>
             <p>We just did a first pre-seed round of $500k with:
               <ul>
@@ -91,7 +92,7 @@
                 <li>Bart Becks: $5k</li>
               </ul>
             </p>
-
+</div>
             <h3>Why Do You Do What You Do? <a href="https://twitter.com/search?f=images&vertical=default&q=%23wdydwyd&src=typd" target="_blank">#wdydwyd</a></h3>
             <p>We want to empower people to create the organizations and institutions of tomorrow.</p> 
 
@@ -137,6 +138,11 @@
            $("header").removeClass("active")
          }
        });
+
+       if(window.location.href.match(/investors/)) {
+        $("#investors").show();
+       }
+
       });
     </script>
   </body>
