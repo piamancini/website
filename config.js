@@ -1,9 +1,9 @@
 module.exports = {
   mailer: {
     auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASSWORD
+        user: process.env.MAILGUN_USER,
+        pass: process.env.MAILGUN_PASSWORD
     },
-    defaultFromAddress: 'OpenCollective Bot <hello@opencollective.org>'
+    defaultFromAddress: 'OpenCollective Website <hello@opencollective.com>'
     }
 }

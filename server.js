@@ -12,12 +12,13 @@ app.use( bodyParser.urlencoded( { extended: true } ) )
 
 
 var transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        service: 'Mailgun',
         auth: {
             user: config.mailer.auth.user,
             pass: config.mailer.auth.pass
         }
     });
+
 
 app.post('/', function (req, res){
 
@@ -33,6 +34,7 @@ app.post('/', function (req, res){
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
+            console.error("Error: ", error);
             res.sendStatus(400, 'Not happening.')
             return res.send('Nope. This is a failure.')
         }
