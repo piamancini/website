@@ -497,7 +497,8 @@ section {
       font-family: 'bold', sans-serif;
       font-weight: normal; }
     section#steps .instructions .item img {
-      max-height: 40px; }
+      max-height: 40px;
+      max-width: 50px; }
     section#steps .instructions .item:first-child span {
       color: #2fc4db; }
     section#steps .instructions .item:nth-child(2) span {
@@ -507,6 +508,8 @@ section {
 
 form {
   text-align: left; }
+  form input[type="submit"] {
+    width: auto; }
   form#followform textarea, form#followform select, form#followform option, form#followform button, form#followform input {
     width: 100%; }
   form#followform input[type="submit"] {

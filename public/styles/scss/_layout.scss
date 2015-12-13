@@ -94,6 +94,7 @@ section {
       .item {
         img {
           max-height: 40px;
+          max-width: 50px;
         }
         &:first-child {
           span {
@@ -116,6 +117,9 @@ section {
 }
 
 form {
+  input[type="submit"] {
+    width: auto;
+  }
   &#followform {
     textarea, select, option, button, input {
       width: 100%;
