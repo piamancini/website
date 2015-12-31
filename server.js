@@ -72,9 +72,7 @@ app.post('/send',function(req, res){
 
 })
 
-app.use('/styles', express.static(__dirname + '/public/styles'))
-app.use('/assets', express.static(__dirname + '/public/assets'))
-app.use('/js', express.static(__dirname + '/public/js'))
+app.use('/public', express.static(__dirname + '/public'))
 
 app.get('*', function (req, res) {
   var parsedUrl = url.parse(req.url);
