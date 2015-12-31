@@ -1,14 +1,15 @@
 'use strict'
-var express = require('express')
+var express = require('express');
+var url = require('url');
 var fs = require('fs');
-var config = require('./config')
-var nodemailer = require('nodemailer')
-var bodyParser = require('body-parser')
-var googleSpreadsheets = require('google-spreadsheet')
-var app = express()
+var config = require('./config');
+var nodemailer = require('nodemailer');
+var bodyParser = require('body-parser');
+var googleSpreadsheets = require('google-spreadsheet');
+var app = express();
 
-app.use(bodyParser.json())
-app.use( bodyParser.urlencoded( { extended: true } ) )
+app.use(bodyParser.json());
+app.use( bodyParser.urlencoded( { extended: true } ) );
 
 
 var transporter = nodemailer.createTransport({
@@ -76,7 +77,8 @@ app.use('/assets', express.static(__dirname + '/public/assets'))
 app.use('/js', express.static(__dirname + '/public/js'))
 
 app.get('*', function (req, res) {
-  var page = req.url.substr(1) || 'index';
+  var parsedUrl = url.parse(req.url);
+  var page = parsedUrl.pathname.substr(1) || 'index';
   var filename = page+'.html';
   var filepath = __dirname+'/public/'+filename;
   if (fs.existsSync(filepath)) {
