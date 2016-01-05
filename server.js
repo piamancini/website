@@ -23,52 +23,36 @@ var transporter = nodemailer.createTransport({
 
 app.post('/', function (req, res){
 
-      // setup e-mail data with unicode symbols
-      var mailOptions = {
-        from: 'website@opencollective.com', // sender address
-        to: 'ops@opencollective.com', // list of receivers
-        subject: 'Invitation request - ' + req.body.source, // Subject line
-        text: req.body.email + ' Requested to join the beta for OpenCollective', // plaintext body
-        html: '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective' // html body
-    };
+  // setup e-mail data with unicode symbols
+  var mailOptions = {
+    from: 'website@opencollective.com', // sender address
+    to: 'ops@opencollective.com' // list of receivers
+  };
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            console.error("Error: ", error);
-            res.sendStatus(400, 'Not happening.')
-            return res.send('Nope. This is a failure.')
-        }
-        res.sendStatus(200, 'Yay! Here goes!')
-    });
+  if (!req.body.country) {
+    mailOptions.subject = 'Invitation request - ' + req.body.source;
+    mailOptions.text = req.body.email + ' Requested to join the beta for OpenCollective';
+    mailOptions.html = '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective';
+  }
+  else {
+    var candidate = req.body.candidate;
+    var textarea = req.body.textarea;
+    var country = req.body.country;
+    var select = req.body.select;
 
-})
+    mailOptions.subject = 'Follow up for Candidate ' + candidate + ' - ' + req.body.source;
+    mailOptions.text = 'Follow up for Candidate ' + candidate;
+    mailOptions.html = 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Reason/Project: ' + textarea + '<br/> Country: ' + country + '<br/> Expected Profit: ' + select;
+  }
 
-app.post('/send',function(req, res){
-    var candidate = req.body.candidate
-    var textarea = req.body.textarea
-    var country = req.body.country
-    var select = req.body.select
-    // setup e-mail data with unicode symbols
-
-    var options = {
-        from: 'invite@opencollective.com', // sender address
-        to: 'ops@opencollective.com', // list of receivers
-        subject: 'Follow up for Candidate ' + candidate, // Subject line
-        text: 'Follow up for Candidate ' + candidate, // plaintext body
-        html: 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Reason/Project: ' + textarea + '<br/> Country: ' + country + '<br/> Expected Profit: ' + select // html body
-    };
-
-    console.log(options)
-
-    // send mail with defined transport object
-    transporter.sendMail(options, function(error, info){
-        if(error){
-            return res.sendStatus(400, 'Not happening.')
-        }
-        console.log('ok')
-        res.sendStatus(200, 'Yay! Here goes!')
-    })
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+          return res.sendStatus(400, 'Not happening.')
+      }
+      console.log('ok')
+      res.sendStatus(200, 'Yay! Here goes!')
+  })
 
 })
 
