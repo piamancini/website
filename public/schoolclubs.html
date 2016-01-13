@@ -7,7 +7,7 @@
     <script type="text/javascript" src="public/js/mtiFontTrackingCode.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Collect & disburse money transparently" />
+    <meta name="description" content="Collect money & disperse it transparently" />
     <meta property="og:image" content="public/assets/app-preview.png" />
 </head>
 <body id="home">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-5 col-offset-1 bpush-5 center">
                     <img src="public/assets/logo-1.svg" class="preview"/>
-                    <h2>Collect & disburse money transparently</h2>
+                    <h2>Run your club transparently</h2>
                 </div>
             </div>
         </div>
@@ -49,24 +49,24 @@
                 <div class="col-3 item apush-2 bpush-4">
                     <img src="public/assets/icon1.svg" />
                     <h3 class="apush-2"><span>1.</span> Create</h3>
-                    <p class="apush-1">Create a collective for your organization or project</p>
+                    <p class="apush-1">Create a new page for your club</p>
                 </div>
                 <div class="col-3 item apush-2 bpush-4">
                     <img src="public/assets/icon2.svg" />
                     <h3 class="apush-2"><span>2.</span> Collect</h3>
-                    <p class="apush-1">Collect money from members or through crowdfunding</p>
+                    <p class="apush-1">Collect money from students and sponsors</p>
                 </div>
                 <div class="col-3 item apush-2 bpush-4">
                     <img src="public/assets/icon3.svg" />
                     <h3 class="apush-2"><span>3.</span> Spend</h3>
-                    <p class="apush-1">Allow anyone to submit expenses, approve them and they will be reimbursed</p>
+                    <p class="apush-1">Receive expenses, approve them and reimburse automatically</p>
                 </div>
             </div>
             <div class="row center apush-2" id="form-container">
                 <div class="col-6">
                     <h3>Interested? Request an invite!</h3>
                     <form id="firstForm" class="row apush-2 bpush-5 center between" method="POST">
-                        <input type="hidden" id="source" name="source" value="index">
+                        <input type="hidden" id="source" name="source" value="schoolclub">
                         <div class="col-8">
                             <input id="candidate" name="email" type="email" placeholder="Email Address" required/>
                         </div>
@@ -96,8 +96,8 @@
                     <form id="followform" method="POST">
                         <h1>Tell us a bit more</h1>
 
-                        <label>Why are you interested and what project would you use it for?</label>
-                        <textarea name="textarea" placeholder="This will put you higher up in the list!"></textarea>
+                        <label>Why are you interested and what project would you use it for? This will put you higher up in the list!</label>
+                        <textarea name="textarea"></textarea>
 
                         <input id="follows" name="candidate" value="" class="hidden" />
 
@@ -363,7 +363,7 @@
                                     <option>$5,001 - $20,000</option>
                                     <option>$20,000 +</option>
                                 </select>
-                                <input type="hidden" name="source" value="index">
+                                <input type="hidden" id="source" name="source" value="schoolclub">
                                 <input id="sendInfo" type="submit" value="Send!"/>
                             </div>
 
@@ -373,9 +373,7 @@
         </div>
     </section>
 
-
     <script type="text/javascript">
-
         $(document).ready(function(){
             $(window).on("scroll", function() {
                 if($(window).scrollTop() > 50) {

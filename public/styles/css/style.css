@@ -434,7 +434,8 @@ header {
     background-color: rgba(255, 255, 255, 0.8); }
   header ul li, header ol li {
     display: inline;
-    font-size: 12px; }
+    font-size: 12px;
+    margin-left: 10px; }
     header ul li a, header ol li a {
       color: #464E51; }
   header img {
@@ -442,6 +443,10 @@ header {
 
 body:not(#home) .pushdown {
   margin-top: 60px; }
+
+body:not(#home) .amount {
+  display: inline-block;
+  width: 60px; }
 
 body:not(#home) h3 {
   color: #34d6bf;
@@ -493,7 +498,8 @@ section {
       font-family: 'bold', sans-serif;
       font-weight: normal; }
     section#steps .instructions .item img {
-      max-height: 40px; }
+      max-height: 40px;
+      max-width: 50px; }
     section#steps .instructions .item:first-child span {
       color: #2fc4db; }
     section#steps .instructions .item:nth-child(2) span {
@@ -503,6 +509,8 @@ section {
 
 form {
   text-align: left; }
+  form input[type="submit"] {
+    width: auto; }
   form#followform textarea, form#followform select, form#followform option, form#followform button, form#followform input {
     width: 100%; }
   form#followform input[type="submit"] {
