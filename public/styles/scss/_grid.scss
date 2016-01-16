@@ -1,17 +1,16 @@
 // _grid.scss
 
 $columns: 12;
-$gutter-width: 5px;
-$outer-margin: 5px;
+$gutter-width: 2%;
+$outer-margin: 4%;
 $gutter-compensation: ( $gutter-width / 2 * -1 );
 $half-gutter-width: ( $gutter-width / 2);
 
-container, .container {
+.container {
     padding-right: $outer-margin;
     padding-left: $outer-margin;
     display: block;
     margin: 0 auto;
-    width: 94%;
 }
 
 .row, row {

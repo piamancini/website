@@ -17,12 +17,18 @@
 }
 
 @include font-face('bold', 'bold', 'sans-serif');
+@include font-face('semibold', 'semibold', 'sans-serif');
 @include font-face('italic', 'italic', 'sans-serif');
 @include font-face('regular', 'regular', 'sans-serif');
 
 
 @mixin bold {
   font-family: 'bold', sans-serif;
+  font-weight: normal;
+}
+
+@mixin semibold {
+  font-family: 'semibold', sans-serif;
   font-weight: normal;
 }
 
@@ -76,4 +82,16 @@
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
   }
+}
+
+@mixin appeareance {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+@mixin solid-transparent {
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 60%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 60%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 }
