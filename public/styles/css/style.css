@@ -339,28 +339,25 @@ table {
   line-height: 27px; }
 
 @media only screen and (max-width: 480px) {
-  #start .col-5 {
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     -ms-flex-preferred-size: 100%;
     -webkit-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%;
     margin-left: 0; }
 
-  footer .col-2,
-  .instructions .col-3 {
-    -ms-flex-preferred-size: 100%;
-    -webkit-flex-basis: 100%;
-    flex-basis: 100%;
-    max-width: 100%; }
-
-  #form-container input {
-    width: 100%;
-    margin-bottom: 10px; }
-  #form-container .col-8, #form-container .col-4, #form-container .col-6 {
-    -ms-flex-preferred-size: 100%;
-    -webkit-flex-basis: 100%;
-    flex-basis: 100%;
-    max-width: 100%; } }
+  header .col-2 {
+    -ms-flex-preferred-size: 10%;
+    -webkit-flex-basis: 10%;
+    flex-basis: 10%;
+    max-width: 10%;
+    margin-left: 0; }
+  header .col-10 {
+    -ms-flex-preferred-size: 90%;
+    -webkit-flex-basis: 90%;
+    flex-basis: 90%;
+    max-width: 90%;
+    margin-left: 0; } }
 body {
   font-size: 20px;
   color: #4f5e70;
@@ -480,7 +477,7 @@ section {
   box-sizing: border-box;
   /* Opera/IE 8+ */ }
   section:first-of-type {
-    padding-top: 10%;
+    padding-top: 12%;
     background: #fff url("../../assets/gradient01.png") top center no-repeat;
     background-size: cover; }
     section:first-of-type img {
@@ -717,7 +714,14 @@ footer {
   visibility: hidden; }
 
 @media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
-  form input {
-    width: 100%; }
-  form input[type="submit"] {
-    margin-top: 10px; } }
+  h1 {
+    font-size: 30px; }
+
+  h2, h3 {
+    font-size: 26px; }
+
+  body {
+    font-size: 16px; }
+
+  .menu li a {
+    font-size: 9px; } }

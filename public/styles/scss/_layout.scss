@@ -80,7 +80,7 @@ section {
   @include border-box;
 
   &:first-of-type {
-    padding-top: 10%;
+    padding-top: 12%;
     background: $light url('../../assets/gradient01.png') top center no-repeat;
     background-size: cover;
     img {
@@ -362,12 +362,17 @@ footer {
 }
 
 @media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
-  form {
-    input {
-      width: 100%;
-    }
-    input[type="submit"] {
-      margin-top: 10px;
-    }
+  h1 {
+    font-size: 30px;
   }
+  h2, h3 {
+    font-size: 26px;
+  }
+  body {
+    font-size: 16px;
+  }
+  .menu li a {
+    font-size: 9px;
+  }
+
 }
