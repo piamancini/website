@@ -208,7 +208,6 @@ input[type="text"], input[type="email"], textarea{
 } //text & textarea
 
   label {
-    font-size: 20px;
     @include semibold;
   }
 
@@ -361,7 +360,7 @@ footer {
   visibility: hidden;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) {
   h1 {
     font-size: 30px;
   }

@@ -572,7 +572,6 @@ form input[type="text"], form input[type="email"], form textarea {
     form input[type="text"]:hover:-ms-input-placeholder, form input[type="text"].hover:-ms-input-placeholder, form input[type="email"]:hover:-ms-input-placeholder, form input[type="email"].hover:-ms-input-placeholder, form textarea:hover:-ms-input-placeholder, form textarea.hover:-ms-input-placeholder {
       color: #46b0ed; }
 form label {
-  font-size: 20px;
   font-family: 'semibold', sans-serif;
   font-weight: normal; }
 form input {
@@ -713,7 +712,7 @@ footer {
   display: none;
   visibility: hidden; }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) {
   h1 {
     font-size: 30px; }
 
