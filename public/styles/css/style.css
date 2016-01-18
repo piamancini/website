@@ -339,6 +339,10 @@ table {
   line-height: 27px; }
 
 @media only screen and (max-width: 480px) {
+  .container {
+    padding-left: 6%;
+    padding-right: 6%; }
+
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     -ms-flex-preferred-size: 100%;
     -webkit-flex-basis: 100%;
@@ -357,7 +361,10 @@ table {
     -webkit-flex-basis: 90%;
     flex-basis: 90%;
     max-width: 90%;
-    margin-left: 0; } }
+    margin-left: 0; }
+
+  form input[type="text"], form input[type="email"] {
+    margin-bottom: 6%; } }
 body {
   font-size: 20px;
   color: #4f5e70;
@@ -450,12 +457,12 @@ body:not(#home) .amount {
   display: inline-block;
   width: 60px; }
 body:not(#home) h3 {
-  color: #34d6bf;
+  color: #46b0ed;
   margin-top: 40px; }
   body:not(#home) h3 a {
-    color: #3e4b50; }
+    color: #46b0ed; }
 body:not(#home) h4 {
-  color: #3e4b50;
+  color: #46b0ed;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 5px;
@@ -717,13 +724,31 @@ footer {
 
 @media only screen and (max-device-width: 480px) {
   h1 {
-    font-size: 30px; }
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 40px; }
 
   h2, h3 {
-    font-size: 26px; }
+    font-size: 20px;
+    line-height: 28px; }
+
+  h2 {
+    padding-bottom: 6%; }
 
   body {
-    font-size: 16px; }
+    font-size: 15px; }
+
+  footer img {
+    width: 50%; }
 
   .menu li a {
-    font-size: 9px; } }
+    font-size: 9px; }
+
+  .instructions {
+    margin-bottom: 20px; }
+
+  .bpush-1 {
+    padding-bottom: 6%; }
+
+  section:first-of-type {
+    padding-top: 18%; } }

@@ -228,6 +228,10 @@ $half-gutter-width: ( $gutter-width / 2);
 }
 
 @media only screen and (max-width: 480px) {
+    .container {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
 
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
         -ms-flex-preferred-size: 100%;
@@ -251,6 +255,12 @@ $half-gutter-width: ( $gutter-width / 2);
             flex-basis: 90%;
             max-width: 90%;
             margin-left: 0;
+        }
+    }
+
+    form {
+        input[type="text"], input[type="email"] {
+            margin-bottom: 6%;
         }
     }
 }
