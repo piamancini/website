@@ -31,103 +31,29 @@
         </div>
     </header>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-offset-3 apush-3 bpush-3">
-                    <img src="public/assets/word.svg"/>
-                </div>
-            </div>
-            <div class="row center">
-                <div class="col-10 col-offset-1">
-                    <h1>Don't you wish we could do things together that require money without having to worry about the complexity of creating a legal entity?</h1>
-                </div>
-            </div>
-            <div class="row center">
-                <div class="col-10 col-offset-1 bpush-1">
-                    <p>Request your account today!</p>
-                </div>
-            </div>
-            <form id="firstForm" class="row center" method="POST">
-                <input type="hidden" name="source" value="schoolclubs">
-
-                <div class="col-5">
-                    <input type="email" id="candidate" name="email" placeholder="Your email address" />
-                </div>
-
-                <div class="col-3">
-                    <input type="submit" value="Sign up for free" />
-                </div>
-
-            </form>
-        </div>
-
-        <div class="container">
-            <div class="row middle">
-                <div class="col-5">
-                    <img src="public/assets/app-preview.png" class="preview apush-5 bpush-5"/>
-                </div>
-                <div class="col-5 col-offset-1 center">
-                    <img src="public/assets/logo.svg" class="bpush-1"/>
-                    <h3>Collect & disburse money transparently</h3>
-                </div>
-            </div>
-        </div>
-    </section>
     <section id="steps">
-        <div class="container">
-            <div class="row between center instructions apush-3">
-                <div class="col-3 item apush-2 bpush-4">
-                    <img src="public/assets/icon1.svg" />
-                    <h3 class="apush-2"><span>1.</span> Create</h3>
-                    <p class="apush-1">Create a collective for your organization or project</p>
-                </div>
-                <div class="col-3 item apush-2 bpush-4">
-                    <img src="public/assets/icon2.svg" />
-                    <h3 class="apush-2"><span>2.</span> Collect</h3>
-                    <p class="apush-1">Collect money from members or through crowdfunding</p>
-                </div>
-                <div class="col-3 item apush-2 bpush-4">
-                    <img src="public/assets/icon3.svg" />
-                    <h3 class="apush-2"><span>3.</span> Spend</h3>
-                    <p class="apush-1">Allow anyone to submit expenses, approve them and they will be reimbursed</p>
-                </div>
-            </div>
-        </div>
 
         <div class="container">
-            <div class="row center">
-                <div class="col-10 col-offset-1">
-                    <h2>Because you should worry about your cause not your budget</h2>
-                </div>
-            </div>
-            <div class="row center apush-2 bpush-1">
-                <div class="col-12">
-                    <p>Start building amazing things today</p>
-                </div>
-            </div>
-
-            <form id="bottomForm" class="row center bpush-3" method="POST">
-
-                <div class="col-5">
-                    <input type="email" id="candidate" name="email" placeholder="Your email address" />
-                </div>
-
-                <div class="col-3">
-                    <input type="submit" value="Sign up for free" />
-                </div>
-
-            </form>
-
-            <div id="followup" class="hidden">
+            <div id="followUp">
                 <div class="row">
-                    <h1>Tell us more</h1>
+                    <h1 class="col-12">Get in touch!</h1>
+                    <p class="col-12">Give us a shout and we'll get in touch as soon as possible</p>
                 </div>
-                <form id="followForm" method="POST" class="row">
-                    <input id="follows" name="candidate" value="" class="hidden" />
+                <form id="followForm" method="POST" class="row apush-2">
+                    <input id="follows" name="source" value="contact" class="hidden" />
+                    
+                    <div class="col-6">
+                        <label>What's your name?</label>
+                        <input type="text" name="name" placeholder="What's your name?" required/>
+                    </div>
 
                     <div class="col-6">
-                        <label>What's your collective?</label>
+                        <label>Where should we reply to?</label>
+                        <input type="email" name="candidate" placeholder="Your email address" required/>
+                    </div>
+
+                    <div class="col-6">
+                        <label>Do you have a collective?</label>
                         <input type="text" name="collective" value="" placeholder="Collective name">
                     </div>
 
@@ -407,6 +333,11 @@
                     </div>
 
                 </form>
+                <div class="row">
+                    <div class="col-12">
+                        <p>You can also find us on <a href="https://twitter.com/openCollect" target="_blank">Twitter</a></p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -445,23 +376,6 @@
                     })
                     .done(function(){
                         $('#followup').removeClass('hidden')
-                        $('html,body').animate({
-                            scrollTop: $("#followUp").offset().top
-                        },'slow');
-                    });
-                    var candidate = $('#candidate').val();
-                    $('#follows').val(candidate)
-                });
-
-                $('#bottomForm').on('submit', function(e){
-                    e.preventDefault();
-                    $.ajax({
-                        url:'/',
-                        data:$(this).serialize(),
-                        method: 'post'
-                    })
-                    .done(function(){
-                        $('#followUp').removeClass('hidden')
                         $('html,body').animate({
                             scrollTop: $("#followUp").offset().top
                         },'slow');

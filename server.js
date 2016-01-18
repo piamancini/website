@@ -32,18 +32,28 @@ app.post('/', function (req, res){
   if (!req.body.country) {
     mailOptions.subject = 'Invitation request - ' + req.body.source;
     mailOptions.text = req.body.email + ' Requested to join the beta for OpenCollective';
-    mailOptions.html = '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join the list on OpenCollective';
+    mailOptions.html = '<a mailto:'+req.body.email+'/>'+req.body.email+'</a> Has requested to join OpenCollective';
   }
   else {
     var candidate = req.body.candidate;
-    var textarea = req.body.textarea;
+    var collective = req.body.collective;
+    var size = req.body.size;
     var country = req.body.country;
-    var select = req.body.select;
+    var budget = req.body.budget;
+    var textarea = req.body.textarea;
+    var name = req.body.name;
 
-    mailOptions.subject = 'Follow up for Candidate ' + candidate + ' - ' + req.body.source;
+    mailOptions.subject = 'Follow up for candidate ' + candidate + ' - ' + req.body.source;
     mailOptions.text = 'Follow up for Candidate ' + candidate;
-    mailOptions.html = 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Reason/Project: ' + textarea + '<br/> Country: ' + country + '<br/> Expected Profit: ' + select;
+    mailOptions.html = 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a>
+                       <br/> Collective: ' + collective + 
+                       '<br/> Country: ' + country + 
+                       '<br/> Expected Profit: ' + budget + 
+                       '<br/> Goals: ' + textarea +
+                       '<br/> Name: ' + name;
   }
+
+  console.log(mailOptions.html)
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info){

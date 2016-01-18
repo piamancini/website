@@ -393,6 +393,9 @@ p {
   line-height: 24px;
   font-size: 20px; }
 
+a {
+  color: #46b0ed; }
+
 ul li, ol li {
   font-size: 20px;
   line-height: 26px; }
@@ -502,7 +505,7 @@ section {
     section#steps .instructions .item:last-child span {
       color: #dca5e3; }
 
-#followup {
+#followUp {
   padding: 5%;
   border-top: 3px solid #c1c2cb;
   -webkit-box-sizing: border-box;
