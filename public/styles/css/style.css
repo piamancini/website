@@ -550,7 +550,7 @@ form input[type="text"], form input[type="email"], form textarea {
   -ms-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
-  border: 1px solid transparent; }
+  border: 1px solid #46b0ed; }
   form input[type="text"]::-webkit-input-placeholder, form input[type="email"]::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
     font-family: 'italic', sans-serif;
     font-weight: normal; }
