@@ -45,12 +45,7 @@ app.post('/', function (req, res){
 
     mailOptions.subject = 'Follow up for candidate ' + candidate + ' - ' + req.body.source;
     mailOptions.text = 'Follow up for Candidate ' + candidate;
-    mailOptions.html = 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a>
-                       <br/> Collective: ' + collective + 
-                       '<br/> Country: ' + country + 
-                       '<br/> Expected Profit: ' + budget + 
-                       '<br/> Goals: ' + textarea +
-                       '<br/> Name: ' + name;
+    mailOptions.html = 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Collective: ' + collective + '<br/> Country: ' + country + '<br/> Expected Profit: ' + budget + '<br/> Goals: ' + textarea +'<br/> Name: ' + name;
   }
 
   console.log(mailOptions.html)
