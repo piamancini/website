@@ -3,6 +3,7 @@
 body {
     font-size: 20px;
     color: $base;
+    font-weight: normal;
     @include font-smoothing;
     @include regular;
 }
@@ -10,20 +11,18 @@ body {
 h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    @include bold;
-    text-transform: uppercase;
+    color: $navy;
+    @include semibold;
 }
 
 h2 {
-    font-size: 24px;
-    @include regular;
-    line-height: 28px;
+    font-size: 30px;
+    @include semibold;
+    color: $navy;
 }
 h3 {
-    font-size: 20px;
-    line-height: 26px;
-    @include bold;
-    margin-top: 10px;
+    font-size: 30px;
+    @include semibold;
 }
 
 nav {
@@ -32,8 +31,12 @@ nav {
 }
 
 p {
-    line-height: 26px;
-    font-size: 18px;
+    line-height: 24px;
+    font-size: 20px;
+}
+
+a {
+    color: $blue;
 }
 
 ul, ol {
@@ -42,6 +45,9 @@ ul, ol {
         line-height: 26px;
         a {
             color: $base;
+            &:hover {
+                color: $blue;
+            }
         }
     }
 }

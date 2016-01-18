@@ -1,17 +1,16 @@
 // _grid.scss
 
 $columns: 12;
-$gutter-width: 5px;
-$outer-margin: 5px;
+$gutter-width: 2%;
+$outer-margin: 4%;
 $gutter-compensation: ( $gutter-width / 2 * -1 );
 $half-gutter-width: ( $gutter-width / 2);
 
-container, .container {
+.container {
     padding-right: $outer-margin;
     padding-left: $outer-margin;
     display: block;
     margin: 0 auto;
-    width: 94%;
 }
 
 .row, row {
@@ -230,35 +229,28 @@ container, .container {
 
 @media only screen and (max-width: 480px) {
 
-    #start {
-        .col-5 {
-            -ms-flex-preferred-size: 100%;
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        -ms-flex-preferred-size: 100%;
             -webkit-flex-basis: 100%;
             flex-basis: 100%;
             max-width: 100%;
             margin-left: 0;
-        }
     }
 
-    footer .col-2,
-    .instructions .col-3 {
-        -ms-flex-preferred-size: 100%;
-        -webkit-flex-basis: 100%;
-        flex-basis: 100%;
-        max-width: 100%;
-    }
-
-    #form-container {
-        input {
-            width: 100%;
-            margin-bottom: 10px;
+    header {
+        .col-2 {
+            -ms-flex-preferred-size: 10%;
+            -webkit-flex-basis: 10%;
+            flex-basis: 10%;
+            max-width: 10%;
+            margin-left: 0;
         }
-
-        .col-8, .col-4, .col-6 {
-            -ms-flex-preferred-size: 100%;
-            -webkit-flex-basis: 100%;
-            flex-basis: 100%;
-            max-width: 100%;
+        .col-10 {
+            -ms-flex-preferred-size: 90%;
+            -webkit-flex-basis: 90%;
+            flex-basis: 90%;
+            max-width: 90%;
+            margin-left: 0;
         }
     }
 }

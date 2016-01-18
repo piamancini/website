@@ -1,5 +1,7 @@
 //_layout.scss
-
+html, body {
+  height: 100%;
+}
 header {
   position: fixed;
   top: 0;
@@ -9,7 +11,7 @@ header {
   @include transition;
   -webkit-backdrop-filter: blur(3px);
   &.active {
-    background-color: transparentize($light, .2);
+    background-color: transparentize($lighter-gray, .2);
   }
   ul, ol {
     li {
@@ -27,13 +29,16 @@ header {
 }
 
 body:not(#home) {
+
   .pushdown {
     margin-top: 60px;
   }
+
   .amount {
     display: inline-block;
     width: 60px;
   }
+
   h3 {
     color: $turquoise;
     margin-top: 40px;
@@ -41,7 +46,9 @@ body:not(#home) {
     a {
       color: rgb(62,75,80);
     }
+
   }
+
   h4 {
     color: rgb(62,75,80);
     font-weight: bold;
@@ -49,9 +56,11 @@ body:not(#home) {
     margin-bottom: 5px;
     font-size: 13pt;
   }
+
   p {
     margin: 10px 0px;
   }
+
   ul.list {
     li {
       font-size: 18px;
@@ -66,104 +75,142 @@ body:not(#home) {
 }
 
 section {
-  padding: 5% 0;
   background-color: $light;
   color: $base;
-  &:nth-child(odd) {
-    background-color: $dark-gray;
-    color: $light-gray;
-  }
-  &#start {
-    background: $light url('../../assets/gradient.png') no-repeat center center fixed;
-    @include bgcover;
-    overflow: hidden;
-    padding-top: 5%;
-    .preview {
+  @include border-box;
+
+  &:first-of-type {
+    padding-top: 12%;
+    background: $light url('../../assets/gradient01.png') top center no-repeat;
+    background-size: cover;
+    img {
       width: 100%;
-      margin: 0 auto;
-      display: block;
     }
   }
+  .preview {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+
   &#steps {
-    background-color: $base;
-    color: $light-gray;
+    background: $light url('../../assets/gradient02.png') top center no-repeat;
+    background-size: cover;
     .instructions {
+
       h3 {
         @include bold;
       }
+
       .item {
+
         img {
           max-height: 40px;
           max-width: 50px;
         }
+
         &:first-child {
-          span {
-            color: $cyan;
-          }
-        }
-        &:nth-child(2) {
-          span {
-            color: $lime-green;
-          }
-        }
-        &:last-child {
           span {
             color: $bright-yellow;
           }
         }
-      }
-    }
-  }
+
+        &:nth-child(2) {
+          span {
+            color: $pink;
+          }
+        }
+
+        &:last-child {
+          span {
+            color: $purple;
+          }
+        }
+
+      } //item
+
+    } //instructions
+
+  }// steps
+
+}//section
+
+#followUp {
+  padding: 5%;
+  border-top: 3px solid $mid-gray;
+  @include border-box;
+  @include box-shadow;
+  @include solid-transparent;
+
 }
 
 form {
-  input[type="submit"] {
-    width: auto;
+
+ textarea, select, option, button, input {
+  width: 100%;
+  margin: 1% 0 4% 0;
+}
+textarea {
+  height: 120px;
+}
+input[type="text"], input[type="email"], textarea{
+  background-color: transparentize($lighter-gray, .5);
+  color: $dark-gray;
+  font-size: 20px;
+  padding: 10px 20px;
+  min-width: 50%;
+  resize: none;
+  @include regular;
+  @include border-box;
+  @include border-radius(2px);
+  @include appeareance;
+  @include transition;
+  border: 1px solid transparent; //to make transition smooth and avoid jumpyness
+  &::-webkit-input-placeholder {
+    @include italic;
   }
-  &#followform {
-    textarea, select, option, button, input {
-      width: 100%;
+  
+  &::-moz-placeholder {  
+    @include italic;
+  }
+  
+  &:-ms-input-placeholder {  
+    @include italic;
+  }
+  
+  &:disabled {
+    background-color: $light-gray;
+  }
+  
+  &:focus, &.focus {
+    border: 1px solid $blue;
+    outline: 0;
+  }
+
+  &:hover, &.hover {
+    color: $blue;
+    border: 1px solid $blue;
+
+    &::-webkit-input-placeholder {
+      color: $blue;
     }
-    input[type="submit"]{
-      margin: 0 auto;
-      display: block;
+
+    &::-moz-placeholder {  
+      color: $blue;
     }
-  }
-  text-align: left;
-  ::-webkit-input-placeholder {
-   color: $base;
- }
 
-    :-moz-placeholder { /* Firefox 18- */
-     color: $base;
-   }
+    &:-ms-input-placeholder {  
+      color: $blue;
+    }
 
-    ::-moz-placeholder {  /* Firefox 19+ */
-     color: $base;
-   }
+  }
+} //text & textarea
 
-   :-ms-input-placeholder {
-     color: $base;
-   }
-   label {
-    font-size: 16px;
-    line-height: 26px;
+  label {
+    @include semibold;
   }
-  textarea {
-    padding: 10px;
-    font-size: 16px;
-    @include regular;
-    @include border-radius(2px);
-    @include border-box;
-    width: 85%;
-    height: 150px;
-    border: 0 none;
-    color: $base;
-    background-color: transparentize($light, .5);
-    resize: none;
-    display: block;
-    margin-bottom: 20px;
-  }
+
   input{
     border: 0 none;
     padding: 11px 20px 12px;
@@ -171,19 +218,23 @@ form {
     @include border-radius(2px);
     @include transition;
     @include border-box;
-    background-color: transparentize($light, .5);
-    width: 85%;
+    background-color: transparentize($lighter-gray, .5);
 
     &:hover, &:active {
-      background-color: transparentize($light, .2)
+      background-color: transparentize($lighter-gray, .2)
     }
+
   }
+
   button, input[type="submit"] {
     border: 0 none;
     color: $light;
     padding: 10px 20px;
+    height: 46px;
+    margin-top: 3px;
     font-size: 18px;
     cursor: pointer;
+    text-transform: uppercase;
     @include bold;
     @include transition;
     @include border-radius(2px);
@@ -191,24 +242,28 @@ form {
     -webkit-appearance: none;
     -moz-appearance: none;
     text-align: center;
+
     &:hover {
       background-color: darken($pinkish-red, 8%)
     }
+
   }
+
   select {
     -moz-appearance: none;
     -webkit-appeareance: none;
 
     @include regular;
-    font-size: 16px;
-    height: 40px;
+    font-size: 20px;
+    height: 45px;
     @include border-radius(2px);
     color: $base;
     border: 0 none;
-    background-color: transparentize($light, .5);
+    background-color: transparentize($lighter-gray, .5);
     margin-bottom: 20px;
     display: block;
-    padding: 0 15px;
+    padding: 10px 20px;
+    @include appeareance;
   }
 }
 
@@ -216,9 +271,9 @@ footer {
   background-color: $dark-gray;
   padding: 20px 0;
   color: $light-gray;
-  height: 50px;
-  .logo {
-    width: 100%;
+  @include italic;
+  p {
+    font-size: 16px;
   }
 }
 
@@ -305,13 +360,18 @@ footer {
   visibility: hidden;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 480px) {
-  form {
-    input {
-      width: 100%;
-    }
-    input[type="submit"] {
-      margin-top: 10px;
-    }
+@media only screen and (max-device-width: 480px) {
+  h1 {
+    font-size: 30px;
   }
+  h2, h3 {
+    font-size: 26px;
+  }
+  body {
+    font-size: 16px;
+  }
+  .menu li a {
+    font-size: 9px;
+  }
+
 }
