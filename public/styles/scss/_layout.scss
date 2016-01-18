@@ -40,17 +40,17 @@ body:not(#home) {
   }
 
   h3 {
-    color: $turquoise;
+    color: $blue;
     margin-top: 40px;
 
     a {
-      color: rgb(62,75,80);
+      color: $blue;
     }
 
   }
 
   h4 {
-    color: rgb(62,75,80);
+    color: $blue;
     font-weight: bold;
     margin-top:20px;
     margin-bottom: 5px;
@@ -362,16 +362,34 @@ footer {
 
 @media only screen and (max-device-width: 480px) {
   h1 {
-    font-size: 30px;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 40px;
   }
   h2, h3 {
-    font-size: 26px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  h2 {
+    padding-bottom: 6%;
   }
   body {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  footer img {
+    width: 50%;
   }
   .menu li a {
     font-size: 9px;
+  }
+  .instructions {
+    margin-bottom: 20px;
+  }
+  .bpush-1 {
+    padding-bottom: 6%;
+  }
+  section:first-of-type {
+    padding-top: 18%;
   }
 
 }
