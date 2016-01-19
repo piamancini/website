@@ -371,10 +371,9 @@
                 $("#followForm").on('submit', function(e){
                     e.preventDefault()
                     $.ajax({
-                        url: '/',
-                        method: 'post',
-                        dataType: 'json',
-                        data:$(this).serialize()
+                        url:'/',
+                        data:$(this).serialize(),
+                        method: 'post'
                     })
                     .done(function () {
                         window.location = "/thanks"
