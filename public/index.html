@@ -49,7 +49,7 @@
                 </div>
             </div>
             <form id="firstForm" class="row center" method="POST">
-                <input type="hidden" name="source" value="index">
+                <input type="hidden" name="source" value="homepage">
 
                 <div class="col-5">
                     <input type="email" id="candidate" name="email" placeholder="Your email address" />
@@ -444,7 +444,7 @@
                         method: 'post'
                     })
                     .done(function(){
-                        $('#followup').removeClass('hidden')
+                        $('#followUp').removeClass('hidden')
                         $('html,body').animate({
                             scrollTop: $("#followUp").offset().top
                         },'slow');
@@ -471,16 +471,14 @@
                 });
 
                 $("#followForm").on('submit', function(e){
-                    alert('Thank you! We will get in touch soon'); //TODO: Make it a nice modal or something fancier
                     e.preventDefault()
                     $.ajax({
-                        url: '/',
-                        method: 'post',
-                        dataType: 'json',
-                        data:$(this).serialize()
+                        url:'/',
+                        data:$(this).serialize(),
+                        method: 'post'
                     })
                     .done(function () {
-                        console.log('PUCHI')
+                        window.location = "/thanks"
                     })
                 });
             });
