@@ -376,6 +376,7 @@ body {
 
 h1 {
   font-size: 40px;
+  line-height: 49px;
   margin-bottom: 20px;
   color: #5062bc;
   font-family: 'semibold', sans-serif;
@@ -383,12 +384,14 @@ h1 {
 
 h2 {
   font-size: 30px;
+  line-height: 38px;
   font-family: 'semibold', sans-serif;
   font-weight: normal;
   color: #5062bc; }
 
 h3 {
   font-size: 30px;
+  line-height: 38px;
   font-family: 'semibold', sans-serif;
   font-weight: normal; }
 
