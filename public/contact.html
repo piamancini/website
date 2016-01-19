@@ -38,7 +38,7 @@
             <div id="followUp">
                 <div class="row">
                     <h1 class="col-12">Get in touch!</h1>
-                    <p class="col-12">Give us a shout and we'll get in touch as soon as possible</p>
+                    <p class="col-12">Give us a shout and we'll get in touch soon</p>
                 </div>
                 <form id="followForm" method="POST" class="row apush-2">
                     <input id="follows" name="source" value="contact" class="hidden" />
@@ -329,7 +329,6 @@
                     </div>
 
                     <div class="col-2 col-offset-5">
-                        <input type="hidden" name="source" value="index">
                         <input id="sendInfo" type="submit" value="Submit"/>
                     </div>
 
@@ -368,25 +367,8 @@
                        $("header").removeClass("active")
                    }
                 });
-                $('#firstForm').on('submit', function(e){
-                    e.preventDefault();
-                    $.ajax({
-                        url:'/',
-                        data:$(this).serialize(),
-                        method: 'post'
-                    })
-                    .done(function(){
-                        $('#followup').removeClass('hidden')
-                        $('html,body').animate({
-                            scrollTop: $("#followUp").offset().top
-                        },'slow');
-                    });
-                    var candidate = $('#candidate').val();
-                    $('#follows').val(candidate)
-                });
 
                 $("#followForm").on('submit', function(e){
-                    alert('Thank you! We will get in touch soon'); //TODO: Make it a nice modal or something fancier
                     e.preventDefault()
                     $.ajax({
                         url: '/',
@@ -395,7 +377,7 @@
                         data:$(this).serialize()
                     })
                     .done(function () {
-                        console.log('PUCHI')
+                        window.location = "/thanks"
                     })
                 });
             });
