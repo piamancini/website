@@ -62,39 +62,22 @@ app.post('/', function (req, res){
 
   var email = req.body.email;
 
-  console.log(mailOptions.html)
-  console.log('email ' + req.body.email)
+  var responseEmail = {
+    from: 'ops@opencollective.com',
+    to: email
+  }
 
-  emailTemplates(templatesDir, function(err, template) {
+  responseEmail.subject = 'AWESOMENESS';
+  responseEmail.text = 'MOAR AWESOME';
+  responseEmail.html = 'AGAIN AGAIN!';
 
-    if (err) {
-      console.log(err);
-    } else {
-
-      // Send a single email
-      template('action', function(err, html, text) {
-        if (err) {
-          console.log(err);
-        } else {
-          transporter.sendMail({
-            from: 'ops@opencollective.com',
-            to: email,
-            subject: 'SAMPLEHERE',
-            html: html,
-            // generateTextFromHTML: true,
-            text: text
-          }, function(err, responseStatus) {
-            if (err) {
-              console.log(err);
-            } else {
-              console.log(responseStatus.message);
-            }
-          });
-        }
-      });
-
-    } //else
-  });
+  transporter.sendMail(responseEmail, function(error, info){
+    if(error){
+      return res.sendStatus(400, 'Oh hell no')
+    }
+    console.log('Reply sent')
+    res.sendStatus(200, 'Weeeee!')
+  })
 });
 
 app.use('/public', express.static(__dirname + '/public'))
