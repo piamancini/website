@@ -6,6 +6,9 @@ var config = require('./config');
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var googleSpreadsheets = require('google-spreadsheet');
+var path           = require('path')
+  , templatesDir   = path.resolve(__dirname, '..', '/email')
+  , emailTemplates = require('email-templates')
 var app = express();
 
 app.use(bodyParser.json());
@@ -13,12 +16,12 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 
 
 var transporter = nodemailer.createTransport({
-        service: 'Mailgun',
-        auth: {
-            user: config.mailer.auth.user,
-            pass: config.mailer.auth.pass
-        }
-    });
+  service: 'gmail',
+  auth: {
+    user: 'maru@bxe.me',
+    pass: 'HRrPcBBepE2q8NBztEKEe'
+  }
+});
 
 
 app.post('/', function (req, res){
@@ -48,8 +51,6 @@ app.post('/', function (req, res){
     mailOptions.html = 'Candidate: <a mailto:' + candidate + '/>' + candidate + '</a><br/> Collective: ' + collective + '<br/> Country: ' + country + '<br/> Expected Profit: ' + budget + '<br/> Goals: ' + textarea +'<br/> Name: ' + name;
   }
 
-  console.log(mailOptions.html)
-
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info){
       if(error){
@@ -59,7 +60,25 @@ app.post('/', function (req, res){
       res.sendStatus(200, 'Yay! Here goes!')
   })
 
-})
+  var email = req.body.email;
+
+  var responseEmail = {
+    from: 'ops@opencollective.com',
+    to: email
+  }
+
+  responseEmail.subject = 'Thank you for your submission';
+  responseEmail.text = 'Thank you for reaching out to Open Collective! We’ll be in touch shortly to talk about what amazing projects you have in mind.  In the meantime join our community through our Slack channel: https://slack.opencollective.com/ and take a peek at our latest Open Collective https://opencollective.com/yeoman Talk to you soon!';
+  responseEmail.html = 'Thank you for reaching out to Open Collective! We’ll be in touch shortly to talk about what amazing projects you have in mind.<br/>  In the meantime join our community through our <a href="https://slack.opencollective.com/">Slack channel</a> and take a peek at our latest <a href="https://opencollective.com/yeoman">Open Collective</a>.<br /> Talk to you soon!';
+
+  transporter.sendMail(responseEmail, function(error, info){
+    if(error){
+      return res.sendStatus(400, 'Oh hell no')
+    }
+    console.log('Reply sent')
+    res.sendStatus(200, 'Weeeee!')
+  })
+});
 
 app.use('/public', express.static(__dirname + '/public'))
 

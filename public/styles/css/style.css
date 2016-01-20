@@ -376,6 +376,7 @@ body {
 
 h1 {
   font-size: 40px;
+  line-height: 49px;
   margin-bottom: 20px;
   color: #5062bc;
   font-family: 'semibold', sans-serif;
@@ -383,12 +384,14 @@ h1 {
 
 h2 {
   font-size: 30px;
+  line-height: 38px;
   font-family: 'semibold', sans-serif;
   font-weight: normal;
   color: #5062bc; }
 
 h3 {
   font-size: 30px;
+  line-height: 38px;
   font-family: 'semibold', sans-serif;
   font-weight: normal; }
 
@@ -569,12 +572,15 @@ form input[type="text"], form input[type="email"], form textarea {
     font-weight: normal; }
   form input[type="text"]:disabled, form input[type="email"]:disabled, form textarea:disabled {
     background-color: #abb3c3; }
-  form input[type="text"]:focus, form input[type="text"].focus, form input[type="email"]:focus, form input[type="email"].focus, form textarea:focus, form textarea.focus {
-    border: 1px solid #46b0ed;
+  form input[type="text"]:focus, form input[type="text"].focus, form input[type="text"]:active, form input[type="email"]:focus, form input[type="email"].focus, form input[type="email"]:active, form textarea:focus, form textarea.focus, form textarea:active {
+    box-shadow: 0 1px 1px rgba(147, 157, 163, 0.3) inset, 0 0 0 2px rgba(0, 140, 221, 0.2);
+    -webkit-box-shadow: 0 1px 1px rgba(147, 157, 163, 0.3) inset, 0 0 0 2px rgba(0, 140, 221, 0.2);
     outline: 0; }
   form input[type="text"]:hover, form input[type="text"].hover, form input[type="email"]:hover, form input[type="email"].hover, form textarea:hover, form textarea.hover {
     color: #46b0ed;
-    border: 1px solid #46b0ed; }
+    border: 1px solid #46b0ed;
+    box-shadow: 0 1px 1px rgba(147, 157, 163, 0.3) inset, 0 0 0 2px rgba(0, 140, 221, 0.2);
+    -webkit-box-shadow: 0 1px 1px rgba(147, 157, 163, 0.3) inset, 0 0 0 2px rgba(0, 140, 221, 0.2); }
     form input[type="text"]:hover::-webkit-input-placeholder, form input[type="text"].hover::-webkit-input-placeholder, form input[type="email"]:hover::-webkit-input-placeholder, form input[type="email"].hover::-webkit-input-placeholder, form textarea:hover::-webkit-input-placeholder, form textarea.hover::-webkit-input-placeholder {
       color: #46b0ed; }
     form input[type="text"]:hover::-moz-placeholder, form input[type="text"].hover::-moz-placeholder, form input[type="email"]:hover::-moz-placeholder, form input[type="email"].hover::-moz-placeholder, form textarea:hover::-moz-placeholder, form textarea.hover::-moz-placeholder {
@@ -638,8 +644,9 @@ form select {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   color: #4f5e70;
-  border: 0 none;
-  background-color: rgba(248, 250, 249, 0.5);
+  border: 1px solid #46b0ed;
+  background: rgba(248, 250, 249, 0.5) url("../../assets/dd-caret.svg") 96% center no-repeat;
+  background-size: 3%;
   margin-bottom: 20px;
   display: block;
   padding: 10px 20px;

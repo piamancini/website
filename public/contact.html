@@ -9,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Collect & disburse money transparently" />
     <meta property="og:image" content="/public/assets/app-preview.png" />
+    <link rel="icon" href="/public/favicon.ico">
 </head>
 <body id="home">
     <header>
         <div class="container">
-            <nav class="row start">
+            <nav class="row start middle">
                 <div class="col-2">
                     <a href="/"><img src="public/assets/icon.svg" /></a>
                 </div>
@@ -37,11 +38,11 @@
             <div id="followUp">
                 <div class="row">
                     <h1 class="col-12">Get in touch!</h1>
-                    <p class="col-12">Give us a shout and we'll get in touch as soon as possible</p>
+                    <p class="col-12">Give us a shout and we'll get in touch soon</p>
                 </div>
                 <form id="followForm" method="POST" class="row apush-2">
                     <input id="follows" name="source" value="contact" class="hidden" />
-                    
+
                     <div class="col-6">
                         <label>What's your name?</label>
                         <input type="text" name="name" placeholder="What's your name?" required/>
@@ -323,12 +324,11 @@
                     </div>
 
                     <div class="col-12">
-                        <label>What amazing things you wanna' do?</label>
-                        <textarea name="textarea" placeholder="What amazing things you'd love doing?"></textarea>
+                        <label>Tell us more about your project</label>
+                        <textarea name="textarea" placeholder="What amazing things you want to do?"></textarea>
                     </div>
 
                     <div class="col-2 col-offset-5">
-                        <input type="hidden" name="source" value="index">
                         <input id="sendInfo" type="submit" value="Submit"/>
                     </div>
 
@@ -367,34 +367,16 @@
                        $("header").removeClass("active")
                    }
                 });
-                $('#firstForm').on('submit', function(e){
-                    e.preventDefault();
+
+                $("#followForm").on('submit', function(e){
+                    e.preventDefault()
                     $.ajax({
                         url:'/',
                         data:$(this).serialize(),
                         method: 'post'
                     })
-                    .done(function(){
-                        $('#followup').removeClass('hidden')
-                        $('html,body').animate({
-                            scrollTop: $("#followUp").offset().top
-                        },'slow');
-                    });
-                    var candidate = $('#candidate').val();
-                    $('#follows').val(candidate)
-                });
-
-                $("#followForm").on('submit', function(e){
-                    alert('Thank you! We will get in touch soon'); //TODO: Make it a nice modal or something fancier
-                    e.preventDefault()
-                    $.ajax({
-                        url: '/',
-                        method: 'post',
-                        dataType: 'json',
-                        data:$(this).serialize()
-                    })
                     .done(function () {
-                        console.log('PUCHI')
+                        window.location = "/thanks"
                     })
                 });
             });
