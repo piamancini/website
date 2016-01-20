@@ -16,10 +16,10 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 
 
 var transporter = nodemailer.createTransport({
-  service: 'mailgun',
+  service: 'gmail',
   auth: {
-    user: config.mailer.auth.user,
-    pass: config.mailer.auth.pass
+    user: 'maru@bxe.me',
+    pass: 'HRrPcBBepE2q8NBztEKEe'
   }
 });
 
@@ -69,7 +69,7 @@ app.post('/', function (req, res){
 
   responseEmail.subject = 'Thank you for your submission';
   responseEmail.text = 'Thank you for reaching out to Open Collective! We’ll be in touch shortly to talk about what amazing projects you have in mind.  In the meantime join our community through our Slack channel: https://slack.opencollective.com/ and take a peek at our latest Open Collective https://opencollective.com/yeoman Talk to you soon!';
-  responseEmail.html = 'Thank you for reaching out to Open Collective! We’ll be in touch shortly to talk about what amazing projects you have in mind.  In the meantime join our community through our <a href="https://slack.opencollective.com/">Slack channel</a> and take a peek at our latest <a href="https://opencollective.com/yeoman">Open Collective</a>. Talk to you soon!';
+  responseEmail.html = 'Thank you for reaching out to Open Collective! <br />We’ll be in touch shortly to talk about what amazing projects you have in mind.<br/>  In the meantime join our community through our <a href="https://slack.opencollective.com/">Slack channel</a> and take a peek at our latest <a href="https://opencollective.com/yeoman">Open Collective</a>.<br /> Talk to you soon!';
 
   transporter.sendMail(responseEmail, function(error, info){
     if(error){
