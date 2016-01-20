@@ -7,7 +7,7 @@ var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var googleSpreadsheets = require('google-spreadsheet');
 var path           = require('path')
-  , templatesDir   = path.resolve(__dirname + '/email')
+  , templatesDir   = path.resolve(__dirname, '..', '/email')
   , emailTemplates = require('email-templates')
 var app = express();
 
