@@ -16,10 +16,10 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 
 
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'mailgun',
   auth: {
-    user: 'maru@bxe.me',
-    pass: 'HRrPcBBepE2q8NBztEKEe'
+    user: config.mailer.auth.user,
+    pass: config.mailer.auth.pass
   }
 });
 
