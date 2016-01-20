@@ -72,24 +72,14 @@ app.post('/', function (req, res){
     } else {
 
       // Send a single email
-<<<<<<< HEAD
       template('action', function(err, html, text) {
-=======
-      template('action', locals, function(err, html, text) {
->>>>>>> 6eedff1de89ea955c286a6bdbd6e222c88f1fe1d
         if (err) {
           console.log(err);
         } else {
           transporter.sendMail({
-<<<<<<< HEAD
             from: 'ops@opencollective.com',
             to: email,
             subject: 'SAMPLEHERE',
-=======
-            from: 'Spicy Meatball <spicy.meatball@spaghetti.com>',
-            to: email,
-            subject: 'Mangia gli spaghetti con polpette!',
->>>>>>> 6eedff1de89ea955c286a6bdbd6e222c88f1fe1d
             html: html,
             // generateTextFromHTML: true,
             text: text
