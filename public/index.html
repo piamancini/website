@@ -48,7 +48,7 @@
                 <input type="hidden" name="source" value="homepage">
 
                 <div class="col-4">
-                    <input type="email" id="candidate" name="email" placeholder="Your email address" />
+                    <input type="email" id="email" name="email" placeholder="Your email address" />
                 </div>
 
                 <div class="col-4">
@@ -91,7 +91,28 @@
             </div>
         </div>
 
-        <div class="container">
+        <div id="thanksContainer" class="container hidden">
+            <div class="row">
+                <div class="col-6 col-offset-3 apush-3 bpush-3">
+                    <img src="public/assets/word.svg"/>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-4 bpush-3">
+                    <img src="public/assets/thanks.svg" />
+                </div>
+                <div class="col-10">
+                    <h1>Thank you for your submission!</h1>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-10 bpush-5">
+                    <h2>We'll get in touch briefly</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="bottomFormContainer">
             <div class="row center apush-6 bpush-2">
                 <div class="col-10">
                     <h2>The easiest way to start an organization.</h2>
@@ -101,7 +122,7 @@
             <form id="bottomForm" class="row center bpush-6" method="POST">
 
                 <div class="col-4">
-                    <input type="email" id="candidate" name="email" placeholder="Your email address" />
+                    <input type="email" name="email" placeholder="Your email address" />
                 </div>
 
                 <div class="col-4">
@@ -109,78 +130,79 @@
                 </div>
 
             </form>
+         </div>
 
-            <div id="followUp" class="hidden">
-                <div class="row">
-                    <h1>Tell us more</h1>
-                </div>
-                <form id="followForm" method="POST" class="row">
-                    <input id="follows" name="candidate" value="" class="hidden" />
+          <div id="followupContainer" class="container hidden">
+              <div class="row">
+                  <h1>Tell us more</h1>
+              </div>
+              <form id="followupForm" method="POST" class="row">
+                  <input name="email" value="" class="hidden" />
 
-                    <div class="col-6">
-                        <label>What's your collective?</label>
-                        <input type="text" name="collective" value="" placeholder="Collective name">
-                    </div>
+                  <div class="col-6">
+                      <label>What's your collective?</label>
+                      <input type="text" name="collective" value="" placeholder="Collective name">
+                  </div>
 
-                    <div class="col-6">
-                        <label>How big is it?</label>
-                        <input type="text" name="size" value="" placeholder="Collective size">
-                    </div>
+                  <div class="col-6">
+                      <label>How big is it?</label>
+                      <input type="text" name="size" value="" placeholder="Collective size">
+                  </div>
 
-                    <div class="col-6">
-                        <label>Where are you based?</label>
-                        <select name="country">
-                            <option value="AF">Afghanistan</option>
-                            <option value="AX">Åland Islands</option>
-                            <option value="AL">Albania</option>
-                            <option value="DZ">Algeria</option>
-                            <option value="AS">American Samoa</option>
-                            <option value="AD">Andorra</option>
-                            <option value="AO">Angola</option>
-                            <option value="AI">Anguilla</option>
-                            <option value="AQ">Antarctica</option>
-                            <option value="AG">Antigua and Barbuda</option>
-                            <option value="AR">Argentina</option>
-                            <option value="AM">Armenia</option>
-                            <option value="AW">Aruba</option>
-                            <option value="AU">Australia</option>
-                            <option value="AT">Austria</option>
-                            <option value="AZ">Azerbaijan</option>
-                            <option value="BS">Bahamas</option>
-                            <option value="BH">Bahrain</option>
-                            <option value="BD">Bangladesh</option>
-                            <option value="BB">Barbados</option>
-                            <option value="BY">Belarus</option>
-                            <option value="BE">Belgium</option>
-                            <option value="BZ">Belize</option>
-                            <option value="BJ">Benin</option>
-                            <option value="BM">Bermuda</option>
-                            <option value="BT">Bhutan</option>
-                            <option value="BO">Bolivia, Plurinational State of</option>
-                            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-                            <option value="BA">Bosnia and Herzegovina</option>
-                            <option value="BW">Botswana</option>
-                            <option value="BV">Bouvet Island</option>
-                            <option value="BR">Brazil</option>
-                            <option value="IO">British Indian Ocean Territory</option>
-                            <option value="BN">Brunei Darussalam</option>
-                            <option value="BG">Bulgaria</option>
-                            <option value="BF">Burkina Faso</option>
-                            <option value="BI">Burundi</option>
-                            <option value="KH">Cambodia</option>
-                            <option value="CM">Cameroon</option>
-                            <option value="CA">Canada</option>
-                            <option value="CV">Cape Verde</option>
-                            <option value="KY">Cayman Islands</option>
-                            <option value="CF">Central African Republic</option>
-                            <option value="TD">Chad</option>
-                            <option value="CL">Chile</option>
-                            <option value="CN">China</option>
-                            <option value="CX">Christmas Island</option>
-                            <option value="CC">Cocos (Keeling) Islands</option>
-                            <option value="CO">Colombia</option>
-                            <option value="KM">Comoros</option>
-                            <option value="CG">Congo</option>
+                  <div class="col-6">
+                      <label>Where are you based?</label>
+                      <select name="country">
+                          <option value="AF">Afghanistan</option>
+                          <option value="AX">Åland Islands</option>
+                          <option value="AL">Albania</option>
+                          <option value="DZ">Algeria</option>
+                          <option value="AS">American Samoa</option>
+                          <option value="AD">Andorra</option>
+                          <option value="AO">Angola</option>
+                          <option value="AI">Anguilla</option>
+                          <option value="AQ">Antarctica</option>
+                          <option value="AG">Antigua and Barbuda</option>
+                          <option value="AR">Argentina</option>
+                          <option value="AM">Armenia</option>
+                          <option value="AW">Aruba</option>
+                          <option value="AU">Australia</option>
+                          <option value="AT">Austria</option>
+                          <option value="AZ">Azerbaijan</option>
+                          <option value="BS">Bahamas</option>
+                          <option value="BH">Bahrain</option>
+                          <option value="BD">Bangladesh</option>
+                          <option value="BB">Barbados</option>
+                          <option value="BY">Belarus</option>
+                          <option value="BE">Belgium</option>
+                          <option value="BZ">Belize</option>
+                          <option value="BJ">Benin</option>
+                          <option value="BM">Bermuda</option>
+                          <option value="BT">Bhutan</option>
+                          <option value="BO">Bolivia, Plurinational State of</option>
+                          <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                          <option value="BA">Bosnia and Herzegovina</option>
+                          <option value="BW">Botswana</option>
+                          <option value="BV">Bouvet Island</option>
+                          <option value="BR">Brazil</option>
+                          <option value="IO">British Indian Ocean Territory</option>
+                          <option value="BN">Brunei Darussalam</option>
+                          <option value="BG">Bulgaria</option>
+                          <option value="BF">Burkina Faso</option>
+                          <option value="BI">Burundi</option>
+                          <option value="KH">Cambodia</option>
+                          <option value="CM">Cameroon</option>
+                          <option value="CA">Canada</option>
+                          <option value="CV">Cape Verde</option>
+                          <option value="KY">Cayman Islands</option>
+                          <option value="CF">Central African Republic</option>
+                          <option value="TD">Chad</option>
+                          <option value="CL">Chile</option>
+                          <option value="CN">China</option>
+                          <option value="CX">Christmas Island</option>
+                          <option value="CC">Cocos (Keeling) Islands</option>
+                          <option value="CO">Colombia</option>
+                          <option value="KM">Comoros</option>
+                          <option value="CG">Congo</option>
                             <option value="CD">Congo, the Democratic Republic of the</option>
                             <option value="CK">Cook Islands</option>
                             <option value="CR">Costa Rica</option>
@@ -384,7 +406,7 @@
 
                     <div class="col-6">
                         <label>How big you expect your budget to be?</label>
-                        <input type="text" name="budget" value="" placeholder="Desired budget range">
+                        <input type="text" name="budget" value="" placeholder="Estimated monthly budget">
                     </div>
 
                     <div class="col-12">
@@ -418,61 +440,53 @@
 
         <script type="text/javascript">
 
-            $(document).ready(function(){
-                $(window).on("scroll", function() {
-                    if($(window).scrollTop() > 50) {
-                        $("header").addClass("active")
-                    } else {
-                       $("header").removeClass("active")
-                   }
+            var signup = function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:'/',
+                    data:$(this).serialize(),
+                    method: 'post'
                 });
-                $('#firstForm').on('submit', function(e){
-                    e.preventDefault();
-                    $.ajax({
-                        url:'/',
-                        data:$(this).serialize(),
-                        method: 'post'
-                    })
-                    .done(function(){
-                        $('#followUp').removeClass('hidden')
-                        $('html,body').animate({
-                            scrollTop: $("#followUp").offset().top
-                        },'slow');
-                    });
-                    var candidate = $('#candidate').val();
-                    $('#follows').val(candidate)
-                });
+                ga('send', 'signup');
 
-                $('#bottomForm').on('submit', function(e){
-                    e.preventDefault();
-                    $.ajax({
-                        url:'/',
-                        data:$(this).serialize(),
-                        method: 'post'
-                    })
-                    .done(function(){
-                        $('#followUp').removeClass('hidden')
-                        $('html,body').animate({
-                            scrollTop: $("#followUp").offset().top
-                        },'slow');
-                    });
-                    var candidate = $('#candidate').val();
-                    $('#follows').val(candidate)
-                });
+                $('#bottomFormContainer').addClass('hidden');
+                $('#followupContainer').removeClass('hidden');
+                $('html,body').animate({
+                    scrollTop: $("#followupContainer").offset().top
+                },'slow');
+            
+                var email = $(this).find('input[name=email]').val();
+                $('#followupForm').find('input[name=email]').val(email);
+            };
 
-                $("#followForm").on('submit', function(e){
-                    e.preventDefault()
-                    $.ajax({
-                        url:'/',
-                        data:$(this).serialize(),
-                        method: 'post'
-                    })
-                    .done(function () {
-                        window.location = "/thanks"
-                    })
-                });
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 50) {
+                    $("header").addClass("active")
+                } else {
+                   $("header").removeClass("active")
+               }
             });
-</script>
+           
+            $("#followupForm").on('submit', function(e){
+                e.preventDefault()
+                $.ajax({
+                    url:'/',
+                    data:$(this).serialize(),
+                    method: 'post'
+                });
+                ga('send', 'followup');
+                $('#thanksContainer').removeClass('hidden');
+                $('#bottomFormContainer').hide();
+                $('#followupContainer').hide();
+                $('html,body').animate({
+                    scrollTop: $("footer").offset().top
+                },'slow');
+            });
+            $('#firstForm').on('submit', signup);
+            $('#bottomForm').on('submit', signup);
+
+        </script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
