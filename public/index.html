@@ -467,6 +467,7 @@
             });
            
             $("#followupForm").on('submit', function(e){
+                e.preventDefault();
                 $.ajax({
                     url:'/',
                     data:$(this).serialize()+'&source='+source,
