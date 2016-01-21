@@ -34,14 +34,33 @@
 
     <section id="steps">
 
-        <div class="container">
+        <div id="thanksContainer" class="container hidden">
+            <div class="row">
+                <div class="col-6 col-offset-3 apush-3 bpush-3">
+                    <img src="public/assets/word.svg"/>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-4 bpush-3">
+                    <img src="public/assets/thanks.svg" />
+                </div>
+                <div class="col-10">
+                    <h1>Thank you for your submission!</h1>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-10 bpush-5">
+                    <h2>We'll get in touch briefly</h2>
+                </div>
+            </div>
+        </div>
+        <div id="followupContainer" class="container">
             <div id="followUp">
                 <div class="row">
                     <h1 class="col-12">Get in touch!</h1>
                     <p class="col-12">Give us a shout and we'll get in touch soon</p>
                 </div>
                 <form id="followForm" method="POST" class="row apush-2">
-                    <input id="follows" name="source" value="contact" class="hidden" />
 
                     <div class="col-6">
                         <label>What's your name?</label>
@@ -50,7 +69,7 @@
 
                     <div class="col-6">
                         <label>Where should we reply to?</label>
-                        <input type="email" name="candidate" placeholder="Your email address" required/>
+                        <input type="email" name="email" placeholder="Your email address" required/>
                     </div>
 
                     <div class="col-6">
@@ -320,7 +339,7 @@
 
                     <div class="col-6">
                         <label>How big you expect your budget to be?</label>
-                        <input type="text" name="budget" value="" placeholder="Desired budget range">
+                        <input type="text" name="budget" value="" placeholder="Estimated monthly budget">
                     </div>
 
                     <div class="col-12">
@@ -359,7 +378,6 @@
 
         <script type="text/javascript">
 
-            $(document).ready(function(){
                 $(window).on("scroll", function() {
                     if($(window).scrollTop() > 50) {
                         $("header").addClass("active")
@@ -372,14 +390,17 @@
                     e.preventDefault()
                     $.ajax({
                         url:'/',
-                        data:$(this).serialize(),
+                        data:$(this).serialize()+'&source=contact',
                         method: 'post'
                     })
-                    .done(function () {
-                        window.location = "/thanks"
-                    })
+                    .done(function() {
+                      setTimeout(function() {
+                          window.location = "/";
+                      }, 4000);
+                    });
+                    $('#thanksContainer').removeClass("hidden");
+                    $('#followupContainer').addClass('hidden');
                 });
-            });
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
