@@ -1,0 +1,11 @@
+{
+  "env": "NODE_ENV",
+  "mailgun": {
+    "user": "MAILGUN_USER",
+    "password": "MAILGUN_PASSWORD"
+  },
+  "host": {
+    "api": "API_URL",
+    "webapp": "WEBAPP_URL"
+  }
+}

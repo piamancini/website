@@ -1,0 +1,180 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-offset-3 apush-3 bpush-2">
+        <img src="public/assets/word.svg"/>
+      </div>
+    </div>
+    <div class="row center bpush-2">
+      <div class="col-10">
+        <h1>Collect funds for your organization, spend them transparently.</h1>
+      </div>
+    </div>
+    <form id="firstForm" class="row center" method="POST">
+      <div class="col-4">
+        <input type="email" id="email" name="email" placeholder="Your email address" required />
+      </div>
+
+      <div class="col-4">
+        <input type="submit" value="Sign up for private beta" />
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="row middle apush-4">
+      <div class="col-5">
+        <img src="public/assets/app-preview.png" class="preview apush-5 bpush-5"/>
+      </div>
+      <div class="col-5 col-offset-1 center">
+        <img src="public/assets/logo.svg" class="bpush-1"/>
+        <h3>Collect & disburse money collectively without creating your own legal entity</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="steps">
+  <div class="container">
+    <div class="row between center instructions apush-3">
+      <div class="col-4 item apush-2 bpush-2">
+        <img src="public/assets/icon1.svg" />
+        <h3 class="apush-2"><span>1.</span> Create</h3>
+        <p class="apush-1">Create a collective for your organization or project</p>
+      </div>
+      <div class="col-4 item apush-2 bpush-2">
+        <img src="public/assets/icon2.svg" />
+        <h3 class="apush-2"><span>2.</span> Collect</h3>
+        <p class="apush-1">Collect money from members or through crowdfunding</p>
+      </div>
+      <div class="col-4 item apush-2 bpush-2">
+        <img src="public/assets/icon3.svg" />
+        <h3 class="apush-2"><span>3.</span> Spend</h3>
+        <p class="apush-1">Allow anyone to submit expenses, approve them and they will be reimbursed</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="thanksContainer" class="container hidden">
+    <div class="row">
+      <div class="col-6 col-offset-3 apush-3 bpush-3">
+        <img src="public/assets/word.svg"/>
+      </div>
+    </div>
+    <div class="row center">
+      <div class="col-4 bpush-3">
+        <img src="public/assets/thanks.svg" />
+      </div>
+      <div class="col-10">
+        <h1>Thank you for your submission!</h1>
+      </div>
+    </div>
+    <div class="row center">
+      <div class="col-10 bpush-5">
+        <h2>We'll get in touch briefly</h2>
+      </div>
+    </div>
+  </div>
+
+  <div id="bottomFormContainer" class="container">
+    <div class="row center apush-6 bpush-2">
+      <div class="col-10">
+        <h2>The easiest way to start an organization.</h2>
+      </div>
+    </div>
+
+    <form id="bottomForm" class="row center bpush-6" method="POST">
+
+      <div class="col-4">
+        <input type="email" name="email" placeholder="Your email address" required />
+      </div>
+
+      <div class="col-4">
+        <input type="submit" value="Sign up for private beta" />
+      </div>
+
+    </form>
+  </div>
+
+  <div id="followupContainer" class="container hidden">
+    <div class="row">
+      <h1>Tell us more</h1>
+    </div>
+    <form id="followupForm" method="POST" class="row">
+      <input name="email" value="" class="hidden" />
+
+      <div class="col-6">
+        <label>What's your collective?</label>
+        <input type="text" name="collective" value="" placeholder="Collective name">
+      </div>
+
+      <div class="col-6">
+        <label>How big is it?</label>
+        <input type="text" name="size" value="" placeholder="Collective size">
+      </div>
+
+      <div class="col-6">
+        <label>Where are you based?</label>
+        {{>select_country}}
+      </div>
+
+      <div class="col-6">
+        <label>How big you expect your budget to be?</label>
+        <input type="text" name="budget" value="" placeholder="Estimated monthly budget">
+      </div>
+
+      <div class="col-12">
+        <label>Tell us more about your project</label>
+        <textarea name="textarea" placeholder="What amazing things you want to do?"></textarea>
+      </div>
+
+      <div class="col-2 col-offset-5">
+        <input id="sendInfo" type="submit" value="Submit"/>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<script type="text/javascript">
+
+  var source = 'homepage';
+
+  var signup = function(e){
+    e.preventDefault();
+    $.ajax({
+      url:'/',
+      data:$(this).serialize()+'&source='+source,
+      method: 'post'
+    });
+    ga('send', 'signup');
+
+    $('#bottomFormContainer').addClass('hidden');
+    $('#followupContainer').removeClass('hidden');
+    $('html,body').animate({
+      scrollTop: $("#followupContainer").offset().top
+    },'slow');
+  
+    var email = $(this).find('input[name=email]').val();
+    $('#followupForm').find('input[name=email]').val(email);
+  };
+  
+  $("#followupForm").on('submit', function(e){
+    e.preventDefault();
+    $.ajax({
+      url:'/',
+      data:$(this).serialize()+'&source='+source,
+      method: 'post'
+    });
+    ga('send', 'followup');
+    $('#thanksContainer').removeClass('hidden');
+    $('#bottomFormContainer').hide();
+    $('#followupContainer').hide();
+    $('html,body').animate({
+      scrollTop: $("footer").offset().top
+    },'slow');
+  });
+  $('#firstForm').on('submit', signup);
+  $('#bottomForm').on('submit', signup);
+
+</script>
