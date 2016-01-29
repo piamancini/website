@@ -9,6 +9,7 @@ const controllers = {}
 
 controllers.api = require('./api');
 controllers.apply = require('./apply');
+controllers.groups = require('./groups');
 
 module.exports = (app) => {
   /**
@@ -40,6 +41,8 @@ module.exports = (app) => {
   
   app.post('/apply', controllers.apply);
   
+  app.get('/:slug/widget', controllers.groups.widget);
+  
   app.get('/', (req, res) => {
     
     const meta = {
@@ -51,6 +54,18 @@ module.exports = (app) => {
     }
     
     res.render('homepage', { meta } );
+  });
+  
+  app.use(function (err, req, res, next) {
+    console.error(err);
+    err.statusCode = err.statusCode || 500;
+    res.status(err.statusCode);
+
+    if(app.set('env') == 'development')
+      res.send(err.message);
+    else
+      res.sendStatus(err.statusCode);
+
   });
   
 }

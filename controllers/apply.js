@@ -9,6 +9,9 @@ module.exports = (req, res) => {
 
   var email = req.body.email;
   var source = req.body.source;
+  
+  if(!email || !email.match(/.+@.+\..+/))
+    return res.send(400);
 
   // 1st step of registration
   if (!req.body.country) {

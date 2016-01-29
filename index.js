@@ -1,6 +1,5 @@
 'use strict'
 const express = require('express');
-const hbs = require('express-hbs');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
@@ -10,12 +9,10 @@ const morgan = require('morgan');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: true } ) );
-app.engine('hbs', hbs.express4({
-  partialsDir: __dirname + '/views/partials',
-  defaultLayout: __dirname + '/views/layout'
-}));
-app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views');
+
+
+require('./config/views')(app);
+
 
 require('./controllers/routes.js')(app);
 

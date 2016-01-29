@@ -1,0 +1,17 @@
+html, body {
+  font-size: 10pt;
+  font-family: Helvetica Neue, Arial;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img.round {
+  border-radius: 50%;
+}

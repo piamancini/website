@@ -12,8 +12,14 @@
     "express": "^4.13.3",
     "express-hbs": "^0.8.4",
     "express-server-status": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1",
+    "moment": "^2.11.1",
     "morgan": "^1.6.1",
     "nodemailer": "^1.8.0",
+    "numbro": "^1.6.2",
+    "postcss-middleware": "^1.0.0",
+    "request-promise": "^2.0.0",
     "serve-favicon": "^2.3.0"
   },
   "repository": {
@@ -32,11 +38,16 @@
   },
   "homepage": "https://github.com/OpenCollective/website#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "cssnext": "^1.8.4",
+    "gulp-batch": "^1.0.5",
+    "gulp-watch": "^4.3.5",
     "node-sass": "^3.4.1",
-    "nodemon": "^1.8.1"
+    "nodemon": "^1.8.1",
+    "precss": "^1.4.0"
   },
   "scripts": {
-    "build-css": "node-sass --include-path public/styles/scss public/styles/scss/style.scss public/styles/css/style.css",
-    "dev": "node server & nodemon -e scss -x \"npm run build-css\""
+    "build": "gulp build",
+    "dev": "node-dev index.js & gulp watch"
   }
 }

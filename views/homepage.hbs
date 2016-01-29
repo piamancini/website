@@ -66,12 +66,12 @@
         <img src="public/assets/thanks.svg" />
       </div>
       <div class="col-10">
-        <h1>Thank you for your submission!</h1>
+        <h1>Thank you for joining us!</h1>
       </div>
     </div>
     <div class="row center">
       <div class="col-10 bpush-5">
-        <h2>We'll get in touch briefly</h2>
+        <h2>We'll get in touch shortly</h2>
       </div>
     </div>
   </div>
@@ -138,17 +138,33 @@
 
 <script type="text/javascript">
 
-  var source = 'homepage';
+  /* Gets parameters from URL */
+  function getUrlParameter(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
 
-  var signup = function(e){
+    for (var i = 0; i < sURLVariables.length; i++){
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam){
+        return sParameterName[1];
+      }
+    }
+    return null;
+  }
+  
+ var source = getUrlParameter('source') || 'homepage';
+ var signup = function(e){
     e.preventDefault();
     $.ajax({
       url:'/',
       data:$(this).serialize()+'&source='+source,
-      method: 'post'
+      method: 'post',
+      success: function(data) {
+        ga('send', 'signup');
+        fbq('track', 'Lead');
+      }
     });
-    ga('send', 'signup');
-
+    
     $('#bottomFormContainer').addClass('hidden');
     $('#followupContainer').removeClass('hidden');
     $('html,body').animate({
@@ -164,9 +180,13 @@
     $.ajax({
       url:'/',
       data:$(this).serialize()+'&source='+source,
-      method: 'post'
+      method: 'post',
+      success: function(data) {
+        ga('send', 'followup');
+        fbq('track', 'CompleteRegistration');
+      }
     });
-    ga('send', 'followup');
+    
     $('#thanksContainer').removeClass('hidden');
     $('#bottomFormContainer').hide();
     $('#followupContainer').hide();
@@ -177,4 +197,17 @@
   $('#firstForm').on('submit', signup);
   $('#bottomForm').on('submit', signup);
 
+  <!-- Facebook Pixel Code -->
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '860571030678308');
+  fbq('track', "PageView");
+  <!-- End Facebook Pixel Code -->
 </script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=860571030678308&ev=PageView&noscript=1"/>
+</noscript>
