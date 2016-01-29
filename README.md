@@ -1,11 +1,9 @@
-# Open Collective Landing Page
+# Open Collective website
 
-## Requirements
-* Node
+This Node server 
 
-## Installation
-* `npm install`
+## Development rules
 
-## Additional
-In the server.js file, you may modify the info for the sender/receiver in the email.
-Credentials were switched to environment variables so they won't be public.
+- We use ES6 syntax (arrow functions, `const`, 
+- We use string interpolation (```const str = `hello ${var}`;```)
+- All scripts should be referenced in `package.json` so that they can be run with `npm run $script`

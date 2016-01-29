@@ -6,13 +6,13 @@ var autoprefixer = require('autoprefixer');
 var cssnext = require('cssnext');
 var precss = require('precss');
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
     watch('styles/*.css', batch(function (events, done) {
         gulp.start('build', done);
     }));
 });
 
-gulp.task('css', function () {
+gulp.task('css', () => {
 
   var processors = [
     autoprefixer,

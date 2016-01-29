@@ -65,7 +65,5 @@ module.exports = (app) => {
       res.send(err.message);
     else
       res.sendStatus(err.statusCode);
-
-  });
-  
+  }); 
 }

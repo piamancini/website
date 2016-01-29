@@ -10,10 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: true } ) );
 
-
 require('./config/views')(app);
-
-
 require('./controllers/routes.js')(app);
 
 /**
