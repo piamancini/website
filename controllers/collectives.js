@@ -1,6 +1,30 @@
 const api = require('../lib/api');
 
 module.exports = {
+  
+  publicPage: (req, res, next) => {
+  
+    api
+      .get(`/groups/${req.params.slug}/`)
+      .then(collective => {
+
+        const meta = {
+          url: collective.publicUrl,
+          title: 'Join ' + collective.name + '\'s open collective',
+          description: collective.name + ' is collecting funds to continue their activities. Chip in!',
+          image: collective.image || collective.logo,
+          twitter: '@'+collective.twitterHandle,
+        };
+
+        res.render('collective', { meta });
+    
+      })
+      .catch((error) => {
+        return next(error);
+      });
+    
+  },
+  
   widget: (req, res, next) => {
     
     const promises = [api.get('/groups/' + req.params.slug), api.get('/groups/' + req.params.slug + '/transactions'),api.get('/groups/' + req.params.slug + '/users')];
@@ -21,7 +45,7 @@ module.exports = {
         
         res.render('widget', {
           layout: 'layouts/widget',
-          group: results[0], 
+          collective: results[0], 
           transactions,
           users
         });

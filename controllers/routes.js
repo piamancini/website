@@ -9,7 +9,7 @@ const controllers = {}
 
 controllers.api = require('./api');
 controllers.apply = require('./apply');
-controllers.groups = require('./groups');
+controllers.collectives = require('./collectives');
 
 module.exports = (app) => {
   /**
@@ -41,7 +41,9 @@ module.exports = (app) => {
   
   app.post('/apply', controllers.apply);
   
-  app.get('/:slug/widget', controllers.groups.widget);
+  app.get('/:slug/widget', controllers.collectives.widget);
+  
+  app.locals.SHOW_GA = process.env.NODE_ENV === 'production';
   
   app.get('/', (req, res) => {
     
@@ -52,9 +54,14 @@ module.exports = (app) => {
       url: "https://opencollective.com",
       image: '/public/images/app-oreview.png'
     }
-    
+        
     res.render('homepage', { meta } );
   });
+  
+  /**
+   * Collectives' public page
+   */
+  app.get('/:slug([A-Za-z0-9-]+)', controllers.collectives.publicPage);
   
   app.use(function (err, req, res, next) {
     console.error(err);
