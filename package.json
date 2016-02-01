@@ -49,6 +49,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "postinstall": "npm run build",
     "build": "gulp build",
     "dev": "node-dev index.js & gulp watch"
   }
