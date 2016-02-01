@@ -1,27 +1,33 @@
 const api = require('../lib/api');
+const request = require('request');
+const config = require('config');
 
 module.exports = {
   
   publicPage: (req, res, next) => {
-  
-    api
-      .get(`/groups/${req.params.slug}/`)
-      .then(collective => {
+    console.log("proxying to ", config.host.app + '/' + req.params.slug);
+    req
+      .pipe(request(config.host.app + '/' + req.params.slug))
+      .pipe(res);
 
-        const meta = {
-          url: collective.publicUrl,
-          title: 'Join ' + collective.name + '\'s open collective',
-          description: collective.name + ' is collecting funds to continue their activities. Chip in!',
-          image: collective.image || collective.logo,
-          twitter: '@'+collective.twitterHandle,
-        };
+    // api
+    //   .get(`/groups/${req.params.slug}/`)
+    //   .then(collective => {
 
-        res.render('collective', { meta });
+    //     const meta = {
+    //       url: collective.publicUrl,
+    //       title: 'Join ' + collective.name + '\'s open collective',
+    //       description: collective.name + ' is collecting funds to continue their activities. Chip in!',
+    //       image: collective.image || collective.logo,
+    //       twitter: '@'+collective.twitterHandle,
+    //     };
+
+    //     res.render('collective', { meta });
     
-      })
-      .catch((error) => {
-        return next(error);
-      });
+    //   })
+    //   .catch((error) => {
+    //     return next(error);
+    //   });
     
   },
   

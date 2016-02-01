@@ -4,6 +4,7 @@ const path = require('path');
 const serverStatus = require('express-server-status');
 const favicon = require('serve-favicon');
 const request = require('request');
+const config = require('config');
 
 const controllers = {}
 
@@ -26,6 +27,10 @@ module.exports = (app) => {
    * Static folder
    */
   app.use('/public', express.static(path.join(__dirname, '../public')));
+  // Serving /static from the app server #hack
+  app.use('/static', (req, res, next) => {
+    req.pipe(request(config.host.app + '/static' + req.url)).pipe(res);
+  });
 
   /**
    * /robots.txt 

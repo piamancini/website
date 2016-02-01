@@ -4,8 +4,6 @@
     <title>{{meta.title}}</title>
 
     <link rel="shortcut icon" type="image/png" href="/public/images/favicon.ico.png"/>
-    <link rel="stylesheet" type="text/css" href="/public/css/homepage.css">
-    <script src="/public/js/mtiFontTrackingCode.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,58 +19,29 @@
     <meta property="og:description" content="{{meta.description}}" />
     <meta property="og:image" content="{{meta.image}}" />
 
+    <!-- Bootstrap Core CSS -->
+    <link href="/public/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/public/css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/public/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/public/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="/public/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
   </head>
 
-
-  <body id="home">
-    <header>
-        <div class="container">
-            <nav class="row start middle">
-                <div class="col-2">
-                    <a href="/"><img src="public/images/icon.svg" /></a>
-                </div>
-
-                <div class="col-10 menu">
-                    <ul>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="https://medium.com/open-collective" target="_blank">Blog</a></li>
-                        <li><a href="https://slack.opencollective.com" target="_blank">Slack</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-
-            </nav>
-        </div>
-    </header>
+  <body>
     
-  {{{body}}}
-
-  <footer>
-      <div class="container">
-          <div class="row">
-              <div class="col-2">
-                  <img src="/public/images/logo-1.svg"/ class="logo">
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-10">
-                  <p>The revolution will not be incorporated</p>
-              </div>
-          </div>
-      </div>
-  </footer>
-
-  <script type="text/javascript">
-    $(window).on("scroll", function() {
-      if($(window).scrollTop() > 50) {
-        $("header").addClass("active")
-      } else {
-        $("header").removeClass("active")
-      }
-    });
-  </script>
-
-  {{> google_analytics }}
-
-  </body>
-</html>
+      {{{body}}}
+      

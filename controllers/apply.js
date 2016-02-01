@@ -11,35 +11,29 @@ module.exports = (req, res) => {
   var source = req.body.source;
   
   if(!email || !email.match(/.+@.+\..+/))
-    return res.send(400);
-
-  // 1st step of registration
-  if (!req.body.country) {
+    return res.sendStatus(400);
     
-    mailOptions.subject = 'Invitation request - ' + source;
-    mailOptions.text = email + ' Requested to join the beta for OpenCollective';
-    mailOptions.html = '<a mailto:'+email+'/>'+email+'</a> Has requested to join OpenCollective';
+  mailOptions.subject = 'Invitation request - ' + source;
+  mailOptions.text = email + ' Requested to join the beta for OpenCollective';
+  mailOptions.html = '<a mailto:'+email+'/>'+email+'</a> Has requested to join OpenCollective';
 
-    sendResponseEmail(email);
+  emaillib.sendResponseEmail(email);
 
+  var collective = req.body.collective;
+  var size = req.body.size;
+  var country = req.body.country;
+  var budget = req.body.budget;
+  var textarea = req.body.textarea;
+  var name = req.body.name;
+
+  mailOptions.subject = 'Follow up for candidate ' + email + ' - ' + req.body.source;
+  mailOptions.text = 'Follow up for candidate ' + email;
+  mailOptions.html = 'email: <a mailto:' + email + '/>' + email + '</a><br/> Collective: ' + collective + '<br/> Country: ' + country + '<br/> Expected Profit: ' + budget + '<br/> Goals: ' + textarea +'<br/>';
+  if(name) {
+    mailOptions.html += 'Name: ' + name;
   }
-  else {
-  // 2nd step of registration
-    var collective = req.body.collective;
-    var size = req.body.size;
-    var country = req.body.country;
-    var budget = req.body.budget;
-    var textarea = req.body.textarea;
-    var name = req.body.name;
 
-    mailOptions.subject = 'Follow up for candidate ' + email + ' - ' + req.body.source;
-    mailOptions.text = 'Follow up for candidate ' + email;
-    mailOptions.html = 'email: <a mailto:' + email + '/>' + email + '</a><br/> Collective: ' + collective + '<br/> Country: ' + country + '<br/> Expected Profit: ' + budget + '<br/> Goals: ' + textarea +'<br/>';
-    if(name) {
-      mailOptions.html += 'Name: ' + name;
-      emaillib.sendResponseEmail(email);
-    }
-  }
+  console.log("Sending email", mailOptions);
 
   // send email to ops@opencollective.com
   emaillib.sendMail(mailOptions, function(error) {

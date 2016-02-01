@@ -5,9 +5,9 @@
     "password": "MAILGUN_PASSWORD"
   },
   "apiKey": "0ac43519edcf4421d80342403fb5985d",
-  "apiUrl": "http://localhost:3060",
   "host": {
-    "api": "API_URL",
-    "webapp": "WEBAPP_URL"
+    "api": "http://localhost:3060",
+    "app": "http://localhost:3000",
+    "website": "WEBSITE_URL"
   }
 }
