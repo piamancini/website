@@ -20,6 +20,14 @@
     "numbro": "^1.6.2",
     "postcss-middleware": "^1.0.0",
     "request-promise": "^2.0.0",
+    "autoprefixer": "^6.3.1",
+    "cssnext": "^1.8.4",
+    "gulp-batch": "^1.0.5",
+    "gulp-less": "^3.0.5",
+    "gulp-watch": "^4.3.5",
+    "node-sass": "^3.4.1",
+    "nodemon": "^1.8.1",
+    "precss": "^1.4.0",
     "serve-favicon": "^2.3.0"
   },
   "repository": {
@@ -37,16 +45,6 @@
     "url": "https://github.com/OpenCollective/website/issues"
   },
   "homepage": "https://github.com/OpenCollective/website#readme",
-  "devDependencies": {
-    "autoprefixer": "^6.3.1",
-    "cssnext": "^1.8.4",
-    "gulp-batch": "^1.0.5",
-    "gulp-less": "^3.0.5",
-    "gulp-watch": "^4.3.5",
-    "node-sass": "^3.4.1",
-    "nodemon": "^1.8.1",
-    "precss": "^1.4.0"
-  },
   "scripts": {
     "start": "node index.js",
     "postinstall": "npm run build",
