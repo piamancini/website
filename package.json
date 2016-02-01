@@ -4,7 +4,7 @@
   "description": "Website for OpenCollective",
   "main": "server.js",
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 5.0.0"
   },
   "dependencies": {
     "body-parser": "^1.14.1",
@@ -48,6 +48,7 @@
     "precss": "^1.4.0"
   },
   "scripts": {
+    "start": "node index.js",
     "build": "gulp build",
     "dev": "node-dev index.js & gulp watch"
   }
