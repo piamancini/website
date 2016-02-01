@@ -49,18 +49,21 @@ module.exports = (app) => {
   app.get('/:slug/widget', controllers.collectives.widget);
   
   app.locals.SHOW_GA = process.env.NODE_ENV === 'production';
-  
+
+  var meta = {
+    title: "OpenCollective - Collect & disburse money transparently",
+    description: "Fund your collective and disburse the money transparently",
+    twitter: "OpenCollect",
+    url: "https://opencollective.com",
+    image: '/public/images/app-preview.png'
+  }
+
   app.get('/', (req, res) => {
-    
-    const meta = {
-      title: "OpenCollective - Collect & disburse money transparently",
-      description: "Fund your collective and disburse the money transparently",
-      twitter: "OpenCollect",
-      url: "https://opencollective.com",
-      image: '/public/images/app-oreview.png'
-    }
-        
     res.render('homepage', { meta } );
+  });
+
+  app.get('/faq', (req, res) => {
+    res.render('faq', { meta } );
   });
   
   /**
